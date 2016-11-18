@@ -3,12 +3,16 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { IntroPage } from '../pages/intro/intro';
+import { TutorialPage } from '../pages/tutorial/tutorial';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    IntroPage
+    IntroPage,
+    TutorialPage,
+    RegisterPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,7 +21,9 @@ import { IntroPage } from '../pages/intro/intro';
   entryComponents: [
     MyApp,
     HomePage,
-    IntroPage
+    IntroPage,
+    TutorialPage,
+    RegisterPage
   ],
   providers: []
 })
