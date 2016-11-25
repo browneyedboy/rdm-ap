@@ -13,6 +13,7 @@ import { NavController } from 'ionic-angular';
 })
 export class TutorialPage {
 
+  cond: string = "niigem";
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
