@@ -33,3 +33,45 @@ ion-navbar{
 		color:#fff !important;
 	}	
 }
+.segment-button{
+	opacity: 1 !important;
+}
+.button-round {
+    padding: 0.7em !important;
+    height: 2.2em !important;
+}
+.choose{
+	line-height: normal;
+	font-size: 10px;
+    align-self: center;
+}
+.time{
+	line-height:normal;
+	font-size:12px;
+    align-self: center;
+    margin-right: 7px;
+}
+.title{
+	align-self: center;	
+    border-left: 1px solid #dedede;
+    font-size: 13px;
+    font-weight: 600;
+}
+ion-card-content{
+	ion-row{
+		text-align:center;
+	}
+}
+ion-card ion-card-content {
+    padding: 3px 5px 3px 5px !important;
+}
+
+
+
+
+
+
+
+
+
+
