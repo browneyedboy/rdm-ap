@@ -54,7 +54,7 @@ ion-navbar{
 .title{
 	align-self: center;	
     border-left: 1px solid #dedede;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
 }
 ion-card-content{
@@ -65,7 +65,12 @@ ion-card-content{
 ion-card ion-card-content {
     padding: 3px 5px 3px 5px !important;
 }
-
+.ion-ios-search:before {
+    background: #fdbe43;
+    color: #fff;
+    border-radius: 18px;
+    padding: 6px 10px;
+}
 
 
 
