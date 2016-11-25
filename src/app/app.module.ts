@@ -5,14 +5,25 @@ import { HomePage } from '../pages/home/home';
 import { IntroPage } from '../pages/intro/intro';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { RegisterPage } from '../pages/register/register';
+import { TabsPage } from '../pages/tabs/tabs';
+import { FavoritePage } from '../pages/favorite/favorite';
+import { SearchPage } from '../pages/search/search';
+import { TestPage } from '../pages/test/test';
+import { MypointPage } from '../pages/mypoint/mypoint';
 
 @NgModule({
   declarations: [
     MyApp,
+    TabsPage,
     HomePage,
     IntroPage,
     TutorialPage,
-    RegisterPage
+    RegisterPage,
+    TabsPage,
+    FavoritePage,
+    SearchPage,
+    TestPage,
+    MypointPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -20,10 +31,16 @@ import { RegisterPage } from '../pages/register/register';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    TabsPage,
     HomePage,
     IntroPage,
     TutorialPage,
-    RegisterPage
+    RegisterPage,
+    TabsPage,
+    FavoritePage,
+    SearchPage,
+    TestPage,
+    MypointPage
   ],
   providers: []
 })

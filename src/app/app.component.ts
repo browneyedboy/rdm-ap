@@ -1,15 +1,22 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { IntroPage } from '../pages/intro/intro';
+import { HomePage } from '../pages/home/home';
 
+import { FavoritePage } from '../pages/favorite/favorite';
+import { MypointPage } from '../pages/mypoint/mypoint';
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+  templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = IntroPage;
+
+  @ViewChild(Nav) nav: Nav;
+
+  rootPage = HomePage;
+
+  pages: Array<{title: string, component: any}>;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -18,5 +25,18 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+
+    // this.pages = [
+    //   { title: 'Page One', component: FavoritePage },
+    //   { title: 'Page Two', component: MypointPage }
+    // ];
+
+  }
+  openPage(page) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    // this.nav.setRoot(page.component);
+    this.nav.push(page.component);
+
   }
 }

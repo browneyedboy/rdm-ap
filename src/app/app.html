@@ -1,0 +1,28 @@
+<ion-menu [content]="content">
+  <ion-content>
+    <ion-list no-lines>
+      <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button> -->
+      <button ion-item>
+      <ion-avatar item-left>
+        <img src="assets/img/avatar-luke.png">
+      </ion-avatar>
+      <h2>Амарсанаа</h2>
+      </button>
+      <button ion-item ><ion-icon name="contacts"></ion-icon> Миний тухай</button>
+      <button ion-item ><ion-icon name="ios-paper"></ion-icon> Хичээлүүд</button>
+      <button ion-item ><ion-icon name="ios-alarm"></ion-icon> Шалгалтууд</button>
+      <button ion-item ><ion-icon name="contacts"></ion-icon> Материалууд</button>
+      <button ion-item ><ion-icon name="contacts"></ion-icon> Их сургуулиуд</button>
+      <button ion-item ><ion-icon name="contacts"></ion-icon> Ном зүй</button>
+      <button ion-item ><ion-icon name="contacts"></ion-icon> Судалгаа</button>
+      <button ion-item ><ion-icon name="contacts"></ion-icon> Мэрэгжил сонгох</button>
+      <button ion-item menuClose>Хаах</button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
