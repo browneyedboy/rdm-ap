@@ -2,10 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { HomePage } from '../pages/home/home';
+//import { HomePage } from '../pages/home/home';
+import { IntroPage } from '../pages/intro/intro';
 
-import { FavoritePage } from '../pages/favorite/favorite';
-import { MypointPage } from '../pages/mypoint/mypoint';
+//import { FavoritePage } from '../pages/favorite/favorite';
+//import { MypointPage } from '../pages/mypoint/mypoint';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,7 +15,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = HomePage;
+  rootPage = IntroPage;
 
   pages: Array<{title: string, component: any}>;
 

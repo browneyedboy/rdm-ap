@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, Slides } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 /*
@@ -13,10 +13,32 @@ import { HomePage } from '../home/home';
   templateUrl: 'intro.html'
 })
 export class IntroPage {
+
+  slide_options = {
+    pager: true
+  };
+  lastSlide = false;
+
+  @ViewChild('slider') slider: Slides;
+
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
     console.log('Hello IntroPage Page');
+  }
+
+  skipIntro() {
+    // You can skip to main app
+    // this.nav.setRoot(TabsNavigationPage);
+
+    // Or you can skip to last slide (login/signup slide)
+    this.lastSlide = true;
+    this.slider.slideTo(this.slider.length());
+  }
+
+  onSlideChanged() {
+    // If it's the last slide, then hide the 'Skip' button on the header
+    this.lastSlide = this.slider.isEnd();
   }
 
   login(){
