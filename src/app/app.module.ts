@@ -11,6 +11,7 @@ import { SearchPage } from '../pages/search/search';
 import { TestPage } from '../pages/test/test';
 import { MypointPage } from '../pages/mypoint/mypoint';
 import { LessonPage } from '../pages/lesson/lesson';
+import { ProfilePage } from '../pages/profile/profile'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LessonPage } from '../pages/lesson/lesson';
     SearchPage,
     TestPage,
     MypointPage,
-    LessonPage
+    LessonPage,
+    ProfilePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -43,7 +45,8 @@ import { LessonPage } from '../pages/lesson/lesson';
     SearchPage,
     TestPage,
     MypointPage,
-    LessonPage
+    LessonPage,
+    ProfilePage
   ],
   providers: []
 })
