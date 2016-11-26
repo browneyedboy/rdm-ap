@@ -13,6 +13,7 @@ import { MypointPage } from '../pages/mypoint/mypoint';
 import { LessonPage } from '../pages/lesson/lesson';
 import { ProfilePage } from '../pages/profile/profile';
 import { TopicPage } from '../pages/topic/topic';
+import { DotestPage } from '../pages/dotest/dotest';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TopicPage } from '../pages/topic/topic';
     MypointPage,
     LessonPage,
     ProfilePage,
-    TopicPage
+    TopicPage,
+    DotestPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -49,7 +51,8 @@ import { TopicPage } from '../pages/topic/topic';
     MypointPage,
     LessonPage,
     ProfilePage,
-    TopicPage
+    TopicPage,
+    DotestPage
   ],
   providers: []
 })

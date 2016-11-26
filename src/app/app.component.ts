@@ -3,6 +3,9 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { ProfilePage } from '../pages/profile/profile'
+import { TutorialPage } from '../pages/tutorial/tutorial'
+import { TestPage } from '../pages/test/test'
+
 import { HomePage } from '../pages/home/home'; // amaraan ordog home
 // import { IntroPage } from '../pages/intro/intro';
 
@@ -45,5 +48,11 @@ export class MyApp {
   }
   openmyaccount(){
     this.nav.push(ProfilePage);
+  }
+  opentutorial(){
+    this.nav.push(TutorialPage);
+  }
+  opentest(){
+    this.nav.push(TestPage);
   }
 }
