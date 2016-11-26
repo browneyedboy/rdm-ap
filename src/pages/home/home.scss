@@ -3,19 +3,56 @@ page-home {
 		background-image: url("../assets/login-bg.png");
 		background-size: cover;
 	}
+	.item-input{
+	      position: static;
+    border: 1px solid #acacac;
+    margin-bottom: 15px;
+    font-size: 12px;
+         height: 20px!important;
+	}
 	.text-input {
     	font-size: 13px;
-    	margin: 8px;
 	}
 	.item-input{
 	    position: static;
-	    border: 1px solid #dedede;
+	    border: 1px solid #acacac;
 	    margin-bottom: 20px;
 	}
 	ion-label {
 	    margin: 0px 8px 0px 0;
 	}
+
+	ion-card-content {
+    	padding: 26px 30px 12px 30px !important;
+	}
+	.item-md .item-button {
+    color: white!important;
+	}
 	.item-block{
-		min-height: 3.4rem;
+		    min-height: 3.4rem!important;
+	}
+
+	.label-md {
+    margin: 13px 8px 0px 0!important;
+}
+
+.list-md > .item-block:last-child{
+	border-bottom: 1px solid #ffffff!important;
+}
+button.disable-hover.item-button.button.button-md.button-clear.button-clear-md.button-clear-md-dark {
+    color: black!important;
+}
+
+.item-button {
+    padding: 0 .6em;
+    height: 25px;
+    font-size: 1.2rem;
+    height: 34px!important;
+}
+
+.text-tsenter{
+	text-align:center;
+	color:#444;
+	line-height: 2.2rem;
 	}
 }

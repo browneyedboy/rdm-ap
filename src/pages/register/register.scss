@@ -1,3 +1,50 @@
 page-register {
+	.item-input{
+	      position: static;
+    border: 1px solid #acacac;
+    margin-bottom: 15px;
+    font-size: 12px;
+         height: 20px!important;
+	}
+
+	.usrr{
+		   min-height: 2.4rem!important;
+	}
+	ion-content{
+			background-image: url("../assets/register-cover.png");
+			background-size:contain;
+			background-repeat:no-repeat;
+	}
+	ion-card {
+		box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3)!important;
+   		border-radius: 0!important;
+        margin: auto!important;
+    	margin-top: 18em!important;
+    	width: calc(100% - 54px)!important;
+	}
+	ion-card-content {
+		padding: 26px 30px 12px 30px!important;
+	}
+	.register-baton{
+		    border-bottom: 0px solid #c8c7cc!important;
+
+	}
+	.register-bat{
+		   height: 34px!important;
+		    color: white!important;
+	}
+	.ion-ios-person-outline:before{
+		    color: rgba(0, 0, 0, 0.26)!important;
+	}
+	.ion-ios-key-outline:before{
+		    color: rgba(0, 0, 0, 0.26)!important;
+	}
+	.ion-ios-pricetags-outline:before{
+		    color: rgba(0, 0, 0, 0.26)!important;
+	}
+
+	.item-block{
+		    min-height: 3.4rem!important;
+	}
 
 }
