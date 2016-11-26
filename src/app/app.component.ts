@@ -18,7 +18,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = ProfilePage;
+  rootPage = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
