@@ -12,7 +12,7 @@ import { HomePage } from '../pages/home/home'; // amaraan ordog home
 
 //import { FavoritePage } from '../pages/favorite/favorite';
 // import { MypointPage } from '../pages/mypoint/mypoint';
-// import { MypointPage } from '../pages/mypoint/mypoint';
+import { DotestPage } from '../pages/dotest/dotest';
 
 
 
@@ -23,7 +23,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = HomePage;
+  rootPage = DotestPage;
 
   pages: Array<{title: string, component: any}>;
 
