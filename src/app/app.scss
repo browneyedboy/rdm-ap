@@ -25,8 +25,11 @@
 }
 ion-menu{
 	ion-icon{
-		margin-right: 7px;
+		margin-right: 0.7em;
 	}	
+	ion-label{
+		margin:0 !important;
+	}
 }
 ion-navbar{
 	button{
@@ -71,6 +74,38 @@ ion-card ion-card-content {
     border-radius: 18px;
     padding: 6px 10px;
 }
+ion-tabs .tabbar {
+    background: #fff !important;
+    border-top: 1px solid #fdbe43;
+}
+.menuprofile{
+	border-bottom: 1px solid #dedede !important;
+    padding-bottom: 7px;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,28 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { LessonPage } from '../lesson/lesson';
 /*
-  Generated class for the Tutorial page.
+  Generated class for the Profile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-tutorial',
-  templateUrl: 'tutorial.html'
+  selector: 'page-profile',
+  templateUrl: 'profile.html'
 })
-export class TutorialPage {
+export class ProfilePage {
 
-  cond: string = "niigem";
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
-    console.log('Hello TutorialPage Page');
-  }
-  
-  lesson(){
-  	this.navCtrl.push(LessonPage);
+    console.log('Hello ProfilePage Page');
   }
 
 }

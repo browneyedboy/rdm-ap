@@ -5,13 +5,17 @@ page-home {
 	}
 	.text-input {
     	font-size: 13px;
+    	margin: 8px;
 	}
 	.item-input{
 	    position: static;
-	    border: 1px solid #acacac;
+	    border: 1px solid #dedede;
 	    margin-bottom: 20px;
 	}
 	ion-label {
 	    margin: 0px 8px 0px 0;
+	}
+	.item-block{
+		min-height: 3.4rem;
 	}
 }

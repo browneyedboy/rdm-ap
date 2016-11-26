@@ -10,6 +10,7 @@ import { FavoritePage } from '../pages/favorite/favorite';
 import { SearchPage } from '../pages/search/search';
 import { TestPage } from '../pages/test/test';
 import { MypointPage } from '../pages/mypoint/mypoint';
+import { LessonPage } from '../pages/lesson/lesson';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MypointPage } from '../pages/mypoint/mypoint';
     FavoritePage,
     SearchPage,
     TestPage,
-    MypointPage
+    MypointPage,
+    LessonPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,7 +42,8 @@ import { MypointPage } from '../pages/mypoint/mypoint';
     FavoritePage,
     SearchPage,
     TestPage,
-    MypointPage
+    MypointPage,
+    LessonPage
   ],
   providers: []
 })
