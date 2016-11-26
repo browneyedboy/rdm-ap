@@ -23,4 +23,20 @@ page-test {
 			margin: 0 !important;
 		}	
 	}
+	.year-back{
+		background-image: url(../assets/icons/year-back.png);
+	    background-repeat: no-repeat;
+	    height: 26px;
+	    display: block;
+	    width: 30px;
+	    color: #fff;
+	    font-size: 11px;
+	    padding-top: 10px;
+	    font-weight: 600;
+    	margin-left: 5px;
+	}
+	.variant{
+		font-size:12px;
+		padding: 10px 0 0;
+	}
 }
