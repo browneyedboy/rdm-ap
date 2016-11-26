@@ -27,13 +27,15 @@ page-home {
 	}
 	.item-md .item-button {
     color: white!important;
+		text-transform: inherit;
 	}
 	.item-block{
 		    min-height: 3.4rem!important;
 	}
 
 	.label-md {
-    margin: 13px 8px 0px 0!important;
+    margin: 6px 8px 0px 0!important;
+		    text-transform: initial;
 }
 
 .list-md > .item-block:last-child{
@@ -55,4 +57,12 @@ button.disable-hover.item-button.button.button-md.button-clear.button-clear-md.b
 	color:#444;
 	line-height: 2.2rem;
 	}
+
+	.nevtreh{
+		margin-top: 2px!important;
+	}
+
+	.scroll-content {
+    padding: 30px 16px!important;
+}
 }
