@@ -14,6 +14,9 @@ import { LessonPage } from '../pages/lesson/lesson';
 import { ProfilePage } from '../pages/profile/profile';
 import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
+import { MaterialPage } from '../pages/material/material';
+import { StarttestPage } from '../pages/starttest/starttest';
+
 
 import { PreloadImage } from '../components/preload-image/preload-image';
 
@@ -35,7 +38,9 @@ import { PreloadImage } from '../components/preload-image/preload-image';
     TopicPage,
     DotestPage,
 
-    PreloadImage
+    PreloadImage,
+    MaterialPage,
+    StarttestPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -56,7 +61,9 @@ import { PreloadImage } from '../components/preload-image/preload-image';
     LessonPage,
     ProfilePage,
     TopicPage,
-    DotestPage
+    DotestPage,
+    MaterialPage,
+    StarttestPage
   ],
   providers: []
 })

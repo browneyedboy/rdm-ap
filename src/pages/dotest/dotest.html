@@ -7,12 +7,77 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>dotest</ion-title>
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end>
+	      <button ion-button>
+	        <img src="assets/logo-erdem12.png">
+	      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col width-33>
+        <span>Монгол хэл</span>
+        <span>Вариант А</span>
+        <span>2010 он</span>
+        <span>Оноо: 800</span>
+      </ion-col>
+      <ion-col width-33 class="asuult">
+          <p class="asuult">
+            Асуулт
+          </p>
+
+          <p class="asuult">
+            1
+          </p>
+
+      </ion-col>
+      <ion-col width-33>
+        <h1 class="minut">
+          30:39
+        </h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<p>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        Эхийг уншаад даалгаврыг гүйцэтгэн, өөрийгөө шалгаарай. Тэнгэрлэг бардам тэргүүн өргөж явтугай Хорьдугаар зууны хондлойд хүүхнүүд цахиур хагалж, найргийн дэвжээнээс алдар, атаархлын аль алиныг нь дагуулсан юм. Гэвч тэд борог шүлгийн бэлчирт бодол чөдөрлөж, дэндүү томдсон дэлхийн титэм зүүдлэх мунхаг амгаланд алмайдаггүй нь олзуурхал бөгөөд Хулангийн хувьд шүлэг бүрийдээ өөрийгөө чамлан ирлэж, адган шаналсан тэмүүлэл нь түүний шүлгийн ижилсэлгүй өнгө төрхийн дархлааг буй болгосон гэж санана. (Д.П)
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</p>
+
+<ion-list radio-group>
+<ion-card>
+  <ion-item>
+    <ion-label>Тийм</ion-label>
+    <ion-radio  color="dark" checked="true"></ion-radio >
+  </ion-item>
+</ion-card>
+<ion-card>
+  <ion-item>
+    <ion-label>Үгүй</ion-label>
+    <ion-radio  color="dark" checked="false"></ion-radio >
+  </ion-item>
+</ion-card>
+<ion-card>
+  <ion-item>
+    <ion-label>Бүгд зөв</ion-label>
+    <ion-radio  color="dark" checked="false"></ion-radio >
+  </ion-item>
+</ion-card>
+</ion-list>
+
+
 
 </ion-content>
