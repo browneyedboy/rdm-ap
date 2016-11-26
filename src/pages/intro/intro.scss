@@ -39,6 +39,9 @@ page-intro {
 
 		ion-slides {
 
+			ion-slide {
+				@include align-items(flex-start);
+			}
 
 			.intro-image-row
 			{
@@ -75,13 +78,17 @@ page-intro {
 
 			.button-bar
 			{
+				@include display(flex);
 				margin: 25px 8%;
 
 				& > .button
 				{
-					background-color: color($colors, button-alt, contrast);
+					@include segment-text-styles(color($colors, button-alt, base));
+					background-color: white;
 					margin: 0px;
 					border-radius: 0px;
+					color:#ae75e7;
+					@include flex(1);
 
 					&:first-child
 					{
@@ -92,10 +99,11 @@ page-intro {
 							content: '';
 							background-color: color($colors, button-alt, base);
 							width: 2px;
+							@include calc(height, "100% - 20px");
 							margin: 10px 0px;
 							position: absolute;
-						  	top: 0px;
-						  	right: 0px;
+						  top: 0px;
+						  right: 0px;
 							opacity: 0.6;
 						}
 					}

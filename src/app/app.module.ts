@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,6 +14,8 @@ import { LessonPage } from '../pages/lesson/lesson';
 import { ProfilePage } from '../pages/profile/profile';
 import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
+
+import { PreloadImage } from '../components/preload-image/preload-image';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DotestPage } from '../pages/dotest/dotest';
     LessonPage,
     ProfilePage,
     TopicPage,
-    DotestPage
+    DotestPage,
+
+    PreloadImage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
