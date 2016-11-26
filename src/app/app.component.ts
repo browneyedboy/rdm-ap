@@ -12,7 +12,7 @@ import { IntroPage } from '../pages/intro/intro';
 
 //import { FavoritePage } from '../pages/favorite/favorite';
 // import { MypointPage } from '../pages/mypoint/mypoint';
-// import { DotestPage } from '../pages/dotest/dotest';
+// import { MaterialPage } from '../pages/material/material';
 
 
 

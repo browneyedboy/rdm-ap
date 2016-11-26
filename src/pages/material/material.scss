@@ -1,3 +1,6 @@
 page-material {
-
+button.item-ios:not([detail-none]) .item-inner{
+  background-image: none!important;
+  padding-right: 0px!important;
+}
 }

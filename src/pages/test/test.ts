@@ -14,7 +14,7 @@ import { StarttestPage } from '../starttest/starttest';
 export class TestPage {
 
 	cond: string = "niigem";
-	public show = false;
+  public show = false; 
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
