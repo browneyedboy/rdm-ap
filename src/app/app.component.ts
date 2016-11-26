@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+import { ProfilePage } from '../pages/profile/profile'
 import { HomePage } from '../pages/home/home'; // amaraan ordog home
 // import { IntroPage } from '../pages/intro/intro';
 
@@ -39,5 +40,8 @@ export class MyApp {
     // this.nav.setRoot(page.component);
     this.nav.push(page.component);
 
+  }
+  openmyaccount(){
+    this.nav.push(ProfilePage);
   }
 }
