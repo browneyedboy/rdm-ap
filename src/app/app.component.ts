@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home'; // amaraan ordog home
-import { IntroPage } from '../pages/intro/intro';
+// import { IntroPage } from '../pages/intro/intro';
 
 //import { FavoritePage } from '../pages/favorite/favorite';
 //import { MypointPage } from '../pages/mypoint/mypoint';
