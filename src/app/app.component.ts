@@ -11,7 +11,8 @@ import { HomePage } from '../pages/home/home'; // amaraan ordog home
 
 //import { FavoritePage } from '../pages/favorite/favorite';
 // import { MypointPage } from '../pages/mypoint/mypoint';
-// import { ProfilePage } from '../pages/profile/profile';
+// import { MypointPage } from '../pages/mypoint/mypoint';
+
 
 
 @Component({
