@@ -1,3 +1,31 @@
 page-lesson {
+	h2{
 
+	}
+	button{
+	    margin: 0 !important;
+	    height: auto !important;
+	    line-height: 0;
+	    padding: 0 !important;
+	}
+	.right{
+		text-align: right;
+	}
+	.left{
+		text-align: left;
+	}
+	.topics{
+		border-top: 1px solid #bfbfbf;
+        margin-top: 6px;
+		.button, .button-md{
+			font-size:12px !important;
+			text-transform: capitalize !important;	
+		}
+		ion-icon{
+			margin-left: 4px !important;
+		}
+	}
+	ion-label{
+		margin:0 !important;
+	}
 }

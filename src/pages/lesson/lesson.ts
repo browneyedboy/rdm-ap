@@ -12,11 +12,13 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'lesson.html'
 })
 export class LessonPage {
-
+  public show = false;
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
     console.log('Hello LessonPage Page');
   }
-
+  showtopics(){
+  	this.show = !this.show;
+  }
 }
