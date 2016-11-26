@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+
 import { TopicPage } from '../topic/topic';
 /*
   Generated class for the Lesson page.
