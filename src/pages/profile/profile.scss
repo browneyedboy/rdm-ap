@@ -1,3 +1,48 @@
 page-profile {
+  .profile-imaj{
 
+    width: 10rem !important;
+    margin: 1rem auto;
+  }
+  .card-title{
+    text-align: center;
+  }
+  .card-md p{
+    text-align: center!important;
+  }
+  .failed{
+    color: red;
+    font-size: 2rem;
+    line-height: 0px!important;
+  }
+  .missing{
+    color: blue;
+    font-size: 2rem;
+    line-height: 0px!important;
+  }
+  .success{
+    color: green;
+    font-size: 2rem;
+    line-height: 0px!important;
+  }
+
+  .item-md .item-button {
+    color: #fdbe43!important;
+    float: right;
+  }
+  ion-col{
+    text-align: center!important;
+  }
+  ion-icon{
+    font-size: 3rem!important;
+    color: #fdbe43!important;
+  }
+  .conta{
+    box-shadow: 1px -2px 3px 0px #d6d6d6!important;
+    margin-top: 4rem!important;
+    margin-bottom: 2rem!important;
+  }
+  .boroodoi{
+        border-right: 1px solid #e9e9e9;
+  }
 }
