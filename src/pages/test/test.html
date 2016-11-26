@@ -20,6 +20,104 @@
 </ion-header>
 
 
-<ion-content padding>
-	shalgaltyn huudas
+<ion-content >
+    <div>
+    <ion-segment [(ngModel)]="cond">
+      <ion-segment-button value="niigem">
+        Нийгмийн ухаан
+      </ion-segment-button>
+      <ion-segment-button value="baigali">
+        Байгалийн ухаан
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+    <div [ngSwitch]="cond">
+
+    <ion-list no-lines *ngSwitchCase="'niigem'">
+      <ion-item>
+          <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col class="time" width-20>16<br>минут</ion-col>
+                    <ion-col class="title" width-33>Математик</ion-col>
+                    <ion-col class="right" width-50>
+                        <button class="choose" color="dark" ion-button clear>Шалгалт<br>сонгох <ion-icon color="primary" name="ios-arrow-down" item-right></ion-icon></button>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col width-50>
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col width-33>
+                                    33
+                                </ion-col>
+                                <ion-col width-33>
+                                    33
+                                </ion-col>
+                                <ion-col width-33>
+                                    33
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-col>
+                    <ion-col width-50>
+                        
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+          </ion-card>
+      </ion-item>
+      <ion-item>
+          <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col class="time" width-20>16<br>минут</ion-col>
+                    <ion-col class="title" width-33>Физик</ion-col>
+                    <ion-col class="right" width-50>
+                        <button class="choose" color="dark" ion-button clear>Шалгалт<br>сонгох <ion-icon color="primary" name="ios-arrow-down" item-right></ion-icon></button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+          </ion-card>
+      </ion-item>
+    </ion-list>
+
+    <ion-list no-lines *ngSwitchCase="'baigali'">
+      <ion-item>
+          <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col class="time" width-20>16<br>минут</ion-col>
+                    <ion-col class="title" width-33>Монгол хэл</ion-col>
+                    <ion-col class="right" width-50>
+                        <button class="choose" color="dark" ion-button clear>Шалгалт<br>сонгох <ion-icon color="primary" name="ios-arrow-down" item-right></ion-icon></button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+          </ion-card>
+      </ion-item>
+      <ion-item>
+          <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col class="time" width-20>16<br>минут</ion-col>
+                    <ion-col class="title" width-33>Уран зохиол</ion-col>
+                    <ion-col class="right" width-50>
+                        <button class="choose" color="dark" ion-button clear>Шалгалт<br>сонгох <ion-icon color="primary" name="ios-arrow-down" item-right></ion-icon></button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+          </ion-card>
+      </ion-item>
+    </ion-list>
+
+    </div>
 </ion-content>

@@ -14,6 +14,7 @@ import { LessonPage } from '../pages/lesson/lesson';
 import { ProfilePage } from '../pages/profile/profile';
 import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
+import { MaterialPage } from '../pages/material/material';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DotestPage } from '../pages/dotest/dotest';
     LessonPage,
     ProfilePage,
     TopicPage,
-    DotestPage
+    DotestPage,
+    MaterialPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -52,7 +54,8 @@ import { DotestPage } from '../pages/dotest/dotest';
     LessonPage,
     ProfilePage,
     TopicPage,
-    DotestPage
+    DotestPage,
+    MaterialPage
   ],
   providers: []
 })

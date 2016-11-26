@@ -2,23 +2,21 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 /*
-  Generated class for the Test page.
+  Generated class for the Material page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-test',
-  templateUrl: 'test.html'
+  selector: 'page-material',
+  templateUrl: 'material.html'
 })
-export class TestPage {
+export class MaterialPage {
 
-	cond: string = "niigem";
-	
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
-    console.log('Hello TestPage Page');
+    console.log('Hello MaterialPage Page');
   }
 
 }
