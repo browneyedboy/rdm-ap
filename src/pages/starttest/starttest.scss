@@ -1,3 +1,29 @@
 page-starttest {
-
+	.cycle{
+	    background: #fdbe43;
+	    border-radius: 13em;
+	    width: 13em;
+	    height: 13em;
+	    margin: 22px auto;
+	    text-align: center;
+	    padding: 2.2em;
+	    color:#fff;
+	}
+	.variant{
+		background: #fff;
+	    padding: 0.4em;
+	    border-radius: 22px;
+	    width: 39px;
+	    height: 39px;
+	    display: inline-block;
+	    font-size: 20px;
+	    text-align: center;
+	    color:#313131;
+	}
+	h3{
+		text-transform: uppercase;
+	}
+	.text-center{
+		text-align: center;
+	}
 }

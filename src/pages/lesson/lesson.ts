@@ -14,6 +14,7 @@ import { TopicPage } from '../topic/topic';
 })
 export class LessonPage {
   public show = false;
+  public show1 = false;
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
