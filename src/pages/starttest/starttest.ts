@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { DotestPage } from '../dotest/dotest';
 /*
   Generated class for the Starttest page.
 
@@ -18,5 +19,7 @@ export class StarttestPage {
   ionViewDidLoad() {
     console.log('Hello StarttestPage Page');
   }
-
+  gotodotest(){
+  	this.navCtrl.push(DotestPage);
+  }
 }

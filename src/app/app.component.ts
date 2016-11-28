@@ -7,26 +7,35 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { TestPage } from '../pages/test/test';
 import { MaterialPage } from '../pages/material/material';
 
-//import { HomePage } from '../pages/home/home'; // amaraan ordog home
-import { IntroPage } from '../pages/intro/intro';
+import { FavoritePage } from '../pages/favorite/favorite';
+import { SearchPage } from '../pages/search/search';
+import { MypointPage } from '../pages/mypoint/mypoint';
+
+import { HomePage } from '../pages/home/home'; // amaraan ordog home
+// import { IntroPage } from '../pages/intro/intro';
 
 //import { FavoritePage } from '../pages/favorite/favorite';
 // import { MypointPage } from '../pages/mypoint/mypoint';
-// import { MaterialPage } from '../pages/material/material';
+// import { MypointPage } from '../pages/mypoint/mypoint';
 
 
 
 @Component({
   templateUrl: 'app.html'
 })
-
 export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = IntroPage;
+  rootPage = HomePage;
 
   pages: Array<{title: string, component: any}>;
+
+  tab1Root: any = FavoritePage;
+  tab2Root: any = TutorialPage;
+  tab3Root: any = SearchPage;
+  tab4Root: any = TestPage;
+  tab5Root: any = MypointPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -64,3 +73,16 @@ export class MyApp {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
