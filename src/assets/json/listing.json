@@ -1,0 +1,61 @@
+{
+    "banner_image": "./assets/lists/600x300banner1.png",
+    "banner_title": "",
+    "populars": [
+        {
+            "title": "Air Sports",
+            "image": "./assets/lists/300x300AirSports.png"
+        },
+        {
+            "title": "Water Sports",
+            "image": "./assets/lists/300x300WaterSports.png"
+        },
+        {
+            "title": "Beach Sports",
+            "image": "./assets/lists/300x300BeachSports.png"
+        },
+        {
+            "title": "Extreme Sports",
+            "image": "./assets/lists/300x300ExtremeSports.png"
+        },
+        {
+            "title": "Athletic Sports",
+            "image": "./assets/lists/300x300AthleticSports.png"
+        },
+        {
+            "title": "Combat Sports",
+            "image": "./assets/lists/300x300CombatSports.png"
+        }
+    ],
+    "categories": [
+        {
+            "title": "Математик",
+            "image": "./assets/lists/200x200basquet.png"
+        },
+        {
+            "title": "Геометер",
+            "image": "./assets/lists/200x200boxeo.png"
+        },
+        {
+            "title": "Монгол хэл",
+            "image": "./assets/lists/200x200crossfit.png"
+        },
+        {
+            "title": "Уран зохиол",
+            "image": "./assets/lists/200x200EventCrossfit.png"
+        },
+        {
+            "title": "Хими",
+            "image": "./assets/lists/200x200chemistry.png"
+        },
+        {
+            "title": "Физик",
+            "image": "./assets/lists/200x200physics.png"
+        },
+        {
+            "title": "Биологи",
+            "image": "./assets/lists/200x200yoga.png"
+        }
+
+    ]
+}

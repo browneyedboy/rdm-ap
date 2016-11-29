@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -7,6 +7,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { RegisterPage } from '../pages/register/register';
 import { TabsPage } from '../pages/tabs/tabs';
 import { FavoritePage } from '../pages/favorite/favorite';
+
 import { SearchPage } from '../pages/search/search';
 import { TestPage } from '../pages/test/test';
 import { MypointPage } from '../pages/mypoint/mypoint';
@@ -16,9 +17,12 @@ import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
 import { MaterialPage } from '../pages/material/material';
 import { StarttestPage } from '../pages/starttest/starttest';
+import { ListingService } from '../pages/search/search.service';
 
 
 import { PreloadImage } from '../components/preload-image/preload-image';
+import { BackgroundImage } from '../components/background-image/background-image';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +43,7 @@ import { PreloadImage } from '../components/preload-image/preload-image';
     DotestPage,
 
     PreloadImage,
+    BackgroundImage,
     MaterialPage,
     StarttestPage
   ],
@@ -68,6 +73,7 @@ import { PreloadImage } from '../components/preload-image/preload-image';
     MaterialPage,
     StarttestPage
   ],
-  providers: []
+  providers: [ListingService],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

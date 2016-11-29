@@ -1,53 +1,46 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 
-/*
-  Generated class for the Search page.
+import 'rxjs/Rx';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+import { ListingModel } from './search.model';
+import { ListingService } from './search.service';
+
+
 @Component({
-  selector: 'page-search',
-  templateUrl: 'search.html'
+  selector: 'search-page',
+  templateUrl: 'search.html',
 })
+
 export class SearchPage {
-  
-  searchQuery: string = '';
-  items: string[];
+  search: ListingModel = new ListingModel();
+  loading: any;
 
-  constructor(public navCtrl: NavController) {
-  	this.initializeItems();
+  constructor(
+    public nav: NavController,
+    public searchService: ListingService,
+    public loadingCtrl: LoadingController
+  ) {
+    this.loading = this.loadingCtrl.create();
   }
 
-  initializeItems() {
-    this.items = [
-      'Физик',
-      'Математик',
-      'Геометр',
-      'Газар зүй',
-      'Монгол хэл',
-      'Физик',
-      'Физик'
-    ];
-  }
-  getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-  }
 
   ionViewDidLoad() {
-    console.log('Hello SearchPage Page');
+    this.loading.present();
+    this.searchService
+      .getData()
+      .then(data => {
+        this.search.banner_image = data.banner_image;
+        this.search.banner_title = data.banner_title;
+        this.search.populars = data.populars;
+        this.search.categories = data.categories;
+        this.loading.dismiss();
+      });
+  }
+
+
+  goToFeed(category: any) {
+    
   }
 
 }
