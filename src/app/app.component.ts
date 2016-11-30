@@ -7,9 +7,9 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { TestPage } from '../pages/test/test';
 import { MaterialPage } from '../pages/material/material';
 
-import { FavoritePage } from '../pages/favorite/favorite';
-import { SearchPage } from '../pages/search/search';
-import { MypointPage } from '../pages/mypoint/mypoint';
+// import { FavoritePage } from '../pages/favorite/favorite';
+// import { SearchPage } from '../pages/search/search';
+// import { MypointPage } from '../pages/mypoint/mypoint';
 
 import { HomePage } from '../pages/home/home'; // amaraan ordog home
 // import { IntroPage } from '../pages/intro/intro';
@@ -29,13 +29,9 @@ export class MyApp {
 
   rootPage = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  // pages: Array<{title: string, component: any}>;
 
-  tab1Root: any = FavoritePage;
-  tab2Root: any = TutorialPage;
-  tab3Root: any = SearchPage;
-  tab4Root: any = TestPage;
-  tab5Root: any = MypointPage;
+
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -51,13 +47,13 @@ export class MyApp {
     // ];
 
   }
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    // this.nav.setRoot(page.component);
-    this.nav.push(page.component);
+  // openPage(page) {
+  //   // Reset the content nav to have just this page
+  //   // we wouldn't want the back button to show in this scenario
+  //   // this.nav.setRoot(page.component);
+  //   this.nav.push(page.component);
 
-  }
+  // }
   openmyaccount(){
     this.nav.push(ProfilePage);
   }

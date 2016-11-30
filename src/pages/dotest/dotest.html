@@ -20,21 +20,17 @@
 
 
 <ion-content>
-
-  <ion-grid>
+<ion-grid>
     <ion-row>
-      <ion-col width-33>
+      <ion-col width-33 class="variant">
         <span>Монгол хэл</span>
-        <span>Вариант А</span>
-        <span>2010 он</span>
+        <span>Вариант: А</span>
+        <span>2010: он</span>
         <span>Оноо: 800</span>
       </ion-col>
       <ion-col width-33 class="asuult">
-          <p class="asuult">
-            Асуулт
-          </p>
-
-          <p class="asuult">
+          <p>
+            Асуулт<br>
             1
           </p>
 
@@ -45,39 +41,84 @@
         </h1>
       </ion-col>
     </ion-row>
-  </ion-grid>
-<p>
-  <ion-grid>
+</ion-grid>
+
+<ion-slides #qSlider (ionDidChange)="onSlideChanged()" [options]="slideOptions">
+  <ion-slide>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+             <p> Эхийг уншаад даалгаврыг гүйцэтгэн, өөрийгөө шалгаарай. Тэнгэрлэг бардам тэргүүн өргөж явтугай Хорьдугаар зууны хондлойд хүүхнүүд цахиур хагалж, найргийн дэвжээнээс алдар, атаархлын аль алиныг нь дагуулсан юм. Гэвч тэд борог шүлгийн бэлчирт бодол чөдөрлөж, дэндүү томдсон дэлхийн титэм зүүдлэх мунхаг амгаланд алмайдаггүй нь олзуурхал бөгөөд Хулангийн хувьд шүлэг бүрийдээ өөрийгөө чамлан ирлэж, адган шаналсан тэмүүлэл нь түүний шүлгийн ижилсэлгүй өнгө төрхийн дархлааг буй болгосон гэж санана. (Д.П)</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      <ion-list radio-group [(ngModel)]="colors" (ionChange)="colorchanged()">
+        <ion-card>
+          <ion-item>
+            <ion-label>Тийм</ion-label>
+            <ion-radio  color="dark" value="1" ></ion-radio >
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label>Үгүй</ion-label>
+            <ion-radio  color="blue" value="2b" ></ion-radio >
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label>Бүгд зөв</ion-label>
+            <ion-radio  color="red" value="3c" ></ion-radio >
+          </ion-item>
+        </ion-card>
+      </ion-list>
+  </ion-slide>
+
+  <ion-slide>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+             <p> Эхийг уншаад даалгаврыг гүйцэтгэн, өөрийгөө шалгаарай. Тэнгэрлэг бардам тэргүүн өргөж явтугай Хорьдугаар зууны хондлойд хүүхнүүд цах 123</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      <ion-list radio-group>
+        <ion-card>
+          <ion-item>
+            <ion-label>Тийм2</ion-label>
+            <ion-radio  color="dark" value="1c" ></ion-radio >
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label>Үгүй2</ion-label>
+            <ion-radio  color="blue" value="2c" ></ion-radio >
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label>Бүгд зөв3</ion-label>
+            <ion-radio  color="red" value="3d" ></ion-radio >
+          </ion-item>
+        </ion-card>
+      </ion-list>
+  </ion-slide>
+
+  <ion-slide>
+    <h2>Slide 3</h2>
+  </ion-slide>
+
+</ion-slides>
+<ion-grid>
+    
     <ion-row>
-      <ion-col>
-        Эхийг уншаад даалгаврыг гүйцэтгэн, өөрийгөө шалгаарай. Тэнгэрлэг бардам тэргүүн өргөж явтугай Хорьдугаар зууны хондлойд хүүхнүүд цахиур хагалж, найргийн дэвжээнээс алдар, атаархлын аль алиныг нь дагуулсан юм. Гэвч тэд борог шүлгийн бэлчирт бодол чөдөрлөж, дэндүү томдсон дэлхийн титэм зүүдлэх мунхаг амгаланд алмайдаггүй нь олзуурхал бөгөөд Хулангийн хувьд шүлэг бүрийдээ өөрийгөө чамлан ирлэж, адган шаналсан тэмүүлэл нь түүний шүлгийн ижилсэлгүй өнгө төрхийн дархлааг буй болгосон гэж санана. (Д.П)
-
-      </ion-col>
+        <ion-col width-50 class="left nxtprv">
+            <button ion-button color="dark" (click)="slidePrev()" clear>Өмнө</button>
+        </ion-col>
+        <ion-col width-50 class="right nxtprv">
+            <button ion-button color="dark" (click)="slideNext()" clear>Дараагийнх</button>
+        </ion-col>
     </ion-row>
-  </ion-grid>
-</p>
 
-<ion-list radio-group>
-<ion-card>
-  <ion-item>
-    <ion-label>Тийм</ion-label>
-    <ion-radio  color="dark" checked="true"></ion-radio >
-  </ion-item>
-</ion-card>
-<ion-card>
-  <ion-item>
-    <ion-label>Үгүй</ion-label>
-    <ion-radio  color="dark" checked="false"></ion-radio >
-  </ion-item>
-</ion-card>
-<ion-card>
-  <ion-item>
-    <ion-label>Бүгд зөв</ion-label>
-    <ion-radio  color="dark" checked="false"></ion-radio >
-  </ion-item>
-</ion-card>
-</ion-list>
-
-
-
+</ion-grid>    
 </ion-content>

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { Slides } from 'ionic-angular';
 /*
   Generated class for the Dotest page.
 
@@ -13,10 +13,35 @@ import { NavController } from 'ionic-angular';
 })
 export class DotestPage {
 
-  constructor(public navCtrl: NavController) {}
+	constructor(public navCtrl: NavController) {}
+	slideOptions = {
+		loop: false,
+		pager: true,
+		paginationClickable: true,
+		paginationBulletRender: function (index, className) {
+	        return '<span class="' + className + '">' + (index + 1) + '</span>';
+	    }
+	};
+	public colors = false;
+	@ViewChild('qSlider') slider: Slides;
+	
+	onSlideChanged() {
+	    let currentIndex = this.slider.getActiveIndex();
+	    console.log("Current index is", currentIndex);
+	}
+	slidePrev(){
+		this.slider.slidePrev();
+	}
+	slideNext(){
+		this.slider.slideNext();
+	}
+	ionViewDidLoad() {
+		console.log('Hello DotestPage Page');
+	}
 
-  ionViewDidLoad() {
-    console.log('Hello DotestPage Page');
-  }
+	colorchanged(){
+		console.log(this.colors);
+	}
+
 
 }
