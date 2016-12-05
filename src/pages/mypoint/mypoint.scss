@@ -1,6 +1,13 @@
 page-mypoint {
   ion-col {
-      font-size: 12px;
+    font-size: 12px;
+    align-self: center;
+    span{
+        padding: 4px 2px;
+        span{
+            padding:0;
+        }
+    }
   }
   .no-boroodoi{
     box-shadow: none!important;
@@ -14,6 +21,14 @@ page-mypoint {
       font-size: 13px!important;
   }
   .tenappleten{
-    font-size: 10px;
+    // font-size: 10px;
   }
+  ion-card{
+    margin-bottom: 15px !important;    
+  }
+  ion-icon{
+    float: right;
+    font-size: 20px;
+  }
+  
 }

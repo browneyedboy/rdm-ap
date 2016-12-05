@@ -13,6 +13,9 @@ page-home {
 	.text-input {
     	font-size: 13px;
 	}
+	.text-input-ios {
+	    font-size: 11px;
+	}
 	.item-input{
 	    position: static;
 	    border: 1px solid #acacac;
@@ -25,44 +28,48 @@ page-home {
 	ion-card-content {
     	padding: 26px 30px 12px 30px !important;
 	}
-	.item-md .item-button {
-    color: white!important;
-		text-transform: inherit;
+	ion-item button {
+    	color: #fff !important;
+		text-transform: uppercase;
 	}
 	.item-block{
 		    min-height: 3.4rem!important;
 	}
 
-	.label-md {
-    margin: 6px 8px 0px 0!important;
-		    text-transform: initial;
-}
-
-.list-md > .item-block:last-child{
-	border-bottom: 1px solid #ffffff!important;
-}
-button.disable-hover.item-button.button.button-md.button-clear.button-clear-md.button-clear-md-dark {
-    color: black!important;
-}
-
-.item-button {
-    padding: 0 .6em;
-    height: 25px;
-    font-size: 1.2rem;
-    height: 34px!important;
-}
-
-.text-tsenter{
-	text-align:center;
-	color:#444;
-	line-height: 2.2rem;
+	ion-label{
+    	margin: 0 0 8px !important;
 	}
+
+	ion-list > .item-block:last-child{
+		border-bottom: 1px solid #ffffff!important;
+	}
+	button.disable-hover.item-button.button.button-md.button-clear.button-clear-md.button-clear-md-dark {
+	    color: black!important;
+	}
+
+	.item-button {
+	    padding: 0 .6em;
+	    height: 25px;
+	    font-size: 1.2rem;
+	    height: 34px!important;
+	}
+
+	.text-tsenter{
+		text-align:center;
+		color:#444;
+		line-height: 2.2rem;
+		}
 
 	.nevtreh{
 		margin-top: 2px!important;
+		padding:0 !important;
+		.item-inner{
+			padding:0 !important;
+		}
+
 	}
 
 	.scroll-content {
-    padding: 30px 16px!important;
-}
+	    padding: 30px 16px!important;
+	}
 }

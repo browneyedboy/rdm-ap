@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { ProfilePage } from '../pages/profile/profile';
@@ -12,6 +12,7 @@ import { MaterialPage } from '../pages/material/material';
 // import { MypointPage } from '../pages/mypoint/mypoint';
 
 import { HomePage } from '../pages/home/home'; // amaraan ordog home
+// import { TabsPage } from '../pages/tabs/tabs'; 
 // import { IntroPage } from '../pages/intro/intro';
 
 //import { FavoritePage } from '../pages/favorite/favorite';
@@ -26,14 +27,16 @@ import * as Parse from 'parse';
 export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
-
-  rootPage = HomePage;
-
+  // @ViewChild('navTabs') public tabs: Tabs;
+  rootPage: any;
+  tabIndex: number;
+  // private menu: MenuController;
   // pages: Array<{title: string, component: any}>;
 
 
 
-  constructor(platform: Platform) {
+  constructor(public platform: Platform, menu: MenuController,) {
+    this.rootPage = HomePage;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -56,7 +59,9 @@ export class MyApp {
 
   // }
   openmyaccount(){
-    this.nav.push(ProfilePage);
+        this.nav.push(ProfilePage);
+        // this.nav.setRoot(ProfilePage, { tabIndex: ProfilePage });
+
   }
   opentutorial(){
     this.nav.push(TutorialPage);
@@ -67,7 +72,9 @@ export class MyApp {
   openmaterial(){
     this.nav.push(MaterialPage);
   }
-
+    exitApp(){
+         this.platform.exitApp();
+      }
 
 }
 

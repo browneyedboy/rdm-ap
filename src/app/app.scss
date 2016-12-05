@@ -47,6 +47,10 @@ ion-navbar{
     padding: 0.7em !important;
     height: 2.2em !important;
 }
+.button-round-ios {
+    padding: 0.4em !important;
+    height: 1.5em !important;
+}
 .choose{
 	line-height: normal;
 	font-size: 10px;
@@ -64,6 +68,11 @@ ion-navbar{
     font-size: 12px;
     font-weight: 600;
 }
+.card-ios{
+	.title{
+		font-size: 11px;
+	}
+}
 ion-card-content{
 	ion-row{
 		text-align:center;
@@ -80,7 +89,7 @@ ion-card ion-card-content {
 }
 ion-tabs .tabbar {
     background: #fff !important;
-    border-top: 1px solid #fdbe43;
+    border-top: 1px solid #fdbe43 !important;
 }
 .menuprofile{
 	border-bottom: 1px solid #dedede !important;
@@ -90,7 +99,18 @@ ion-tabs .tabbar {
 .ion-item {
     padding-left: 11px !important;
 }
-
+.segment-ios .segment-button.segment-activated {
+    color: #fdbe43;
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #fdbe43;
+    margin-bottom: 1px;
+}
+.segment-ios .segment-button{
+	border:0;
+	border-bottom:1px solid #eee;
+	margin-bottom: 1px;
+}
 
 
 

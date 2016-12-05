@@ -1,37 +1,45 @@
 page-register {
 	.item-input{
-	      position: static;
-    border: 1px solid #acacac;
-    margin-bottom: 15px;
-    font-size: 12px;
-         height: 20px!important;
+	    position: static;
+	    border: 1px solid #acacac;
+	    margin-bottom: 15px;
+	    font-size: 12px;
+        height: 20px!important;
 	}
-
+	.text-input-ios {
+	    font-size: 11px;
+	}
 	.usrr{
 		   min-height: 2.4rem!important;
 	}
 	ion-content{
-			background-image: url("../assets/register-cover.png");
-			background-size:contain;
-			background-repeat:no-repeat;
+		background-image: url("../assets/register-cover.png");
+		background-size:contain;
+		background-repeat:no-repeat;
 	}
 	ion-card {
 		box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3)!important;
    		border-radius: 0!important;
         margin: auto!important;
-    	margin-top: 18em!important;
+    	margin-top: 15em!important;
     	width: calc(100% - 54px)!important;
 	}
 	ion-card-content {
 		padding: 26px 30px 12px 30px!important;
 	}
 	.register-baton{
-		    border-bottom: 0px solid #c8c7cc!important;
-
+		border-bottom: 0px solid #c8c7cc!important;
+		padding:0 !important;
+				.item-inner{
+					padding:0 !important;
+					ion-label{
+						margin: 0 !important;
+					}
+				}
 	}
 	.register-bat{
-		   height: 34px!important;
-		    color: white!important;
+	    height: 34px!important;
+	    color: white!important;
 	}
 	.ion-ios-person-outline:before{
 		    color: rgba(0, 0, 0, 0.26)!important;
