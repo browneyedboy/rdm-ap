@@ -17,7 +17,7 @@ import { HomePage } from '../pages/home/home'; // amaraan ordog home
 //import { FavoritePage } from '../pages/favorite/favorite';
 // import { MypointPage } from '../pages/mypoint/mypoint';
 // import { MypointPage } from '../pages/mypoint/mypoint';
-
+import * as Parse from 'parse';
 
 
 @Component({
@@ -39,6 +39,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
+      Parse.initialize("2IvStdY02wveyZR2s6xP4yV4zRPvvHdBtJ7q6U1l", "9AXw5A8KbBesIJfd9SxqkZgXujqGHiJfCoK31Lip");
     });
 
     // this.pages = [

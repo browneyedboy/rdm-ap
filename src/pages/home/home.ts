@@ -5,6 +5,8 @@ import { NavController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
 
+import * as Parse from 'parse';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -16,6 +18,7 @@ export class HomePage {
     // rootPage = TabsPage;
   }
   logindo(){
+    
   	this.navCtrl.push(TabsPage);
   }
   register(){
