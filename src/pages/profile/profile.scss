@@ -33,9 +33,11 @@ page-profile {
   ion-col{
     text-align: center!important;
   }
-  ion-icon{
-    font-size: 3rem!important;
-    color: #fdbe43!important;
+  ion-content{
+    ion-icon{
+      font-size: 3rem!important;
+      color: #fdbe43!important;
+    }  
   }
   .conta{
     box-shadow: 1px -2px 3px 0px #d6d6d6!important;

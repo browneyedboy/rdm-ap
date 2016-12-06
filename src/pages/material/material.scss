@@ -1,6 +1,19 @@
 page-material {
-button.item-ios:not([detail-none]) .item-inner{
-  background-image: none!important;
-  padding-right: 0px!important;
-}
+	button.item-ios:not([detail-none]) .item-inner{
+	  background-image: none!important;
+	  padding-right: 0px!important;
+	}
+	ion-col {
+	      font-size: 12px;
+	    align-self: center;
+	  }
+	 ion-list{
+	 	ion-icon{
+		 	color: #fdbe43;
+		}	
+	 }
+	 
+	 ion-label{
+		font-size: 12px;
+	 }
 }

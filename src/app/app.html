@@ -18,7 +18,7 @@
       <button ion-item ><ion-icon name="bookmarks"></ion-icon> Ном зүй</button>
       <button ion-item ><ion-icon name="flask"></ion-icon> Судалгаа</button>
       <button ion-item ><ion-icon name="compass"></ion-icon> Мэргэжил сонгох</button>
-      <button ion-item ><ion-icon name="exit" ></ion-icon> Гарах</button>
+      <button ion-item (click)="exitApp()" ><ion-icon name="exit" ></ion-icon> Гарах</button>
     </ion-list>
   </ion-content>
 
@@ -26,5 +26,4 @@
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
-
 
