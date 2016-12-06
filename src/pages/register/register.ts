@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { SearchPage } from '../search/search';
+import { TabsPage } from '../tabs/tabs';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import * as Parse from 'parse';
 
@@ -12,11 +12,9 @@ import * as Parse from 'parse';
 })
 export class RegisterPage {
   register: FormGroup;
-  main_page: { component: any };
+  // main_page: { component: any };
 
   constructor(public navCtrl: NavController) {
-    this.main_page = { component: SearchPage };
-
     this.register = new FormGroup({
       phone: new FormControl('', Validators.required),
       email: new FormControl('john@example.com', Validators.required),
@@ -26,9 +24,6 @@ export class RegisterPage {
 
   doRegister(){
 
-    console.log(this.register.value);
-    console.log(this.register.value.phone);
-
     var currentUser = Parse.User.current();
     if (currentUser) {
         Parse.User.logOut();
@@ -37,16 +32,18 @@ export class RegisterPage {
       user.set("username", this.register.value.email);
       user.set("email", this.register.value.email);
       user.set("password", this.register.value.password);
+      user.set("phone", this.register.value.phone);
 
 
       user.signUp(null, {
         success: function(user) {
-           console.log(user);
+           this.navCtrl.push(TabsPage);
+           // console.log(user);
         },
         error: function(user, error) {
-          console.log(error);
+          // console.log(error);
           // Show the error message somewhere and let the user try again.
-          console.log("Failed")
+          // console.log("Failed")
         }
       });
         // show the signup or login page
