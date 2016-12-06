@@ -6,13 +6,6 @@ import * as Parse from 'parse';
 
 
 
-/*
-  Generated class for the Register page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html'
@@ -36,19 +29,28 @@ export class RegisterPage {
     console.log(this.register.value);
     console.log(this.register.value.phone);
 
-    var user = new Parse.User();
-    user.set("username", this.register.value.email);
-    user.set("email", this.register.value.email);
-    user.set("password", this.register.value.password);
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+        Parse.User.logOut();
+    } else {
+      var user = new Parse.User();
+      user.set("username", this.register.value.email);
+      user.set("email", this.register.value.email);
+      user.set("password", this.register.value.password);
 
-    user.signUp(null, {
-      success: function(user) {
-         this.navCtrl.push(SearchPage);
-      },
-      error: function(user, error) {
-        // Show the error message somewhere and let the user try again.
-        console.log("Failed")
-      }
-    });
+
+      user.signUp(null, {
+        success: function(user) {
+           console.log(user);
+        },
+        error: function(user, error) {
+          console.log(error);
+          // Show the error message somewhere and let the user try again.
+          console.log("Failed")
+        }
+      });
+        // show the signup or login page
+    }
+    
   }
 }

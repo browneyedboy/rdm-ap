@@ -39,7 +39,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-      Parse.initialize("2IvStdY02wveyZR2s6xP4yV4zRPvvHdBtJ7q6U1l", "9AXw5A8KbBesIJfd9SxqkZgXujqGHiJfCoK31Lip");
+      Parse.initialize("2IvStdY02wveyZR2s6xP4yV4zRPvvHdBtJ7q6U1l", "9AXw5A8KbBesIJfd9SxqkZgXujqGHiJfCoK31Lip","PC1ojnS9VU0QUxB90w2SpYMzC8ik2Abz8TGGmROe");
     });
 
     // this.pages = [
