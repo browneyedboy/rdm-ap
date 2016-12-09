@@ -7,17 +7,10 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { TestPage } from '../pages/test/test';
 import { MaterialPage } from '../pages/material/material';
 
-// import { FavoritePage } from '../pages/favorite/favorite';
-// import { SearchPage } from '../pages/search/search';
-// import { MypointPage } from '../pages/mypoint/mypoint';
+import { HomePage } from '../pages/home/home'; // login ordog home
 
-import { HomePage } from '../pages/home/home'; // amaraan ordog home
-// import { TabsPage } from '../pages/tabs/tabs'; 
 // import { IntroPage } from '../pages/intro/intro';
 
-//import { FavoritePage } from '../pages/favorite/favorite';
-// import { MypointPage } from '../pages/mypoint/mypoint';
-// import { MypointPage } from '../pages/mypoint/mypoint';
 import * as Parse from 'parse';
 
 
@@ -29,7 +22,6 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   // @ViewChild('navTabs') public tabs: Tabs;
   rootPage: any;
-  tabIndex: number;
   // private menu: MenuController;
   // pages: Array<{title: string, component: any}>;
 

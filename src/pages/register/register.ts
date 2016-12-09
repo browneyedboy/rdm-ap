@@ -34,10 +34,10 @@ export class RegisterPage {
       user.set("password", this.register.value.password);
       user.set("phone", this.register.value.phone);
 
-
+      var this_ref = this;
       user.signUp(null, {
         success: function(user) {
-           this.navCtrl.push(TabsPage);
+           this_ref.navCtrl.push(TabsPage);
            // console.log(user);
         },
         error: function(user, error) {

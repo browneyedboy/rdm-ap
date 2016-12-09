@@ -23,24 +23,31 @@ export class HomePage {
   }
   logindo(){
     var currentUser = Parse.User.current();
-    console.log(currentUser);
+    console.log('login do');
     if (currentUser) {
+      console.log('current user');
         Parse.User.logOut().then(() => {
           currentUser = Parse.User.current();  // this will now be null
         });
-        console.log(currentUser);
     }
-    Parse.User.logIn(this.login.value.email, this.login.value.password, {
+    
+    var this_ref = this;
+    Parse.User.logIn(this_ref.login.value.email, this_ref.login.value.password, {
       success: function(user) {
         // Do stuff after successful login.
-        this.navCtrl.push(TabsPage);
-        console.log(user);
+        console.log('logged in');
+        this_ref.navCtrl.push(TabsPage);
+
+        console.log('logged in 2');
       },
       error: function(user, error) {
         // The login failed. Check error to see why.
+        console.log('fail');
         console.log(error);
+
       }
     });
+    
   }
   register(){
   	this.navCtrl.push(RegisterPage);

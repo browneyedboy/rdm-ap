@@ -18,7 +18,7 @@ import { DotestPage } from '../pages/dotest/dotest';
 import { MaterialPage } from '../pages/material/material';
 import { StarttestPage } from '../pages/starttest/starttest';
 import { ListingService } from '../pages/search/search.service';
-
+import { EditprofilePage } from '../pages/editprofile/editprofile';
 
 import { PreloadImage } from '../components/preload-image/preload-image';
 import { BackgroundImage } from '../components/background-image/background-image';
@@ -41,11 +41,11 @@ import { BackgroundImage } from '../components/background-image/background-image
     ProfilePage,
     TopicPage,
     DotestPage,
-
     PreloadImage,
     BackgroundImage,
     MaterialPage,
-    StarttestPage
+    StarttestPage,
+    EditprofilePage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -71,7 +71,8 @@ import { BackgroundImage } from '../components/background-image/background-image
     TopicPage,
     DotestPage,
     MaterialPage,
-    StarttestPage
+    StarttestPage,
+    EditprofilePage
   ],
   providers: [ListingService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
