@@ -30,7 +30,7 @@
          <!-- <button ion-button icon-only >
            <ion-icon name="create"></ion-icon>
          </button> -->
-         <div class="card-title">Сарнай</div>
+         <div class="card-title">{{ firstname }}</div>
          <!-- <ion-item> -->
             <button ion-button color="dark" (click)="edit()" clear>Засах</button>
          <!-- </ion-item> -->
@@ -44,13 +44,13 @@
         <ion-col width-50 class="boroodoi">
           <ion-icon name="phone-landscape"></ion-icon>
             <p>Миний утас</p>
-            <p>9999 8888</p>
+            <p>{{ phone }}</p>
         </ion-col>
 
         <ion-col width-50>
           <ion-icon name="ios-mail-outline"></ion-icon>
             <p>Миний имэйл</p>
-            <p>sarnai@outlook.com</p>
+            <p>{{ email }}</p>
         </ion-col>
       </ion-row>
     </ion-grid>
