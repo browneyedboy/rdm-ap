@@ -24,14 +24,14 @@
 	<ion-grid>
 	  <ion-row>
 	    <ion-col width-100 class="text-center">
-	    	Хугацаа: 30 минут<br>
-			Шалгалт: Математик<br>
-			2010 он
+	    	Хугацаа: {{time}} минут<br>
+			Шалгалт: {{title}}<br>
+			{{year}} он
 		</ion-col>
 	  </ion-row>
 	</ion-grid>
-		<div class="cycle" (click)="gotodotest()" >
-			<span class="variant">A</span>
+		<div class="cycle" (click)="gotodotest(id)" >
+			<span class="variant">{{variant}}</span>
 			<p>Вариант</p>
 			<h3>Эхлэх</h3>
 		</div>

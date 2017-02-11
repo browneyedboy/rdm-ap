@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { StarttestPage } from '../starttest/starttest';
-/*
-  Generated class for the Test page.
+import { Lessondata } from '../../providers/lessondata';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-test',
   templateUrl: 'test.html'
@@ -14,16 +10,19 @@ import { StarttestPage } from '../starttest/starttest';
 export class TestPage {
 
 	cond: string = "niigem";
-  public show = false; 
-  constructor(public navCtrl: NavController) {}
+    year: any = 0;
+  public show: any; 
+  constructor(public navCtrl: NavController,  public tutsService: Lessondata) {}
 
   ionViewDidLoad() {
-    console.log('Hello TestPage Page');
+    this.tutsService.loadtest();
   }
-  showtests(){
-  	this.show = !this.show;
+  showtests(id){
+    this.show = id;
   }
-  gotostarttest(){
-  	this.navCtrl.push(StarttestPage);
+  gotostarttest(test){
+  	this.navCtrl.push(StarttestPage, {
+        test: test
+    });
   }
 }

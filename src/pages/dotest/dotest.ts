@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
+import { Lessondata } from '../../providers/lessondata';
 /*
   Generated class for the Dotest page.
 
@@ -13,7 +14,23 @@ import { Slides } from 'ionic-angular';
 })
 export class DotestPage {
 
-	constructor(public navCtrl: NavController) {}
+	constructor(public navCtrl: NavController, public params: NavParams, public tutsService: Lessondata) {
+		this.tutsService.gettests(this.params.get('id'));
+		// console.log(tests);
+	}
+	
+	// ionViewDidLoad(){
+		
+	// }
+	jsonparse(json){
+		var parsed = JSON.parse(json);
+		return parsed.question;
+	}
+	answers(json){
+		var parsed = JSON.parse(json);
+		console.log(parsed.answers);
+		return parsed.answers;
+	}
 	slideOptions = {
 		loop: false,
 		pager: true,

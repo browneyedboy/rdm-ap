@@ -22,6 +22,7 @@ import { EditprofilePage } from '../pages/editprofile/editprofile';
 
 import { PreloadImage } from '../components/preload-image/preload-image';
 import { BackgroundImage } from '../components/background-image/background-image';
+import { Lessondata } from '../providers/lessondata';
 
 
 @NgModule({
@@ -74,7 +75,7 @@ import { BackgroundImage } from '../components/background-image/background-image
     StarttestPage,
     EditprofilePage
   ],
-  providers: [ListingService],
+  providers: [ListingService, Lessondata],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

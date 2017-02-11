@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { DotestPage } from '../dotest/dotest';
 /*
@@ -13,13 +13,28 @@ import { DotestPage } from '../dotest/dotest';
   templateUrl: 'starttest.html'
 })
 export class StarttestPage {
-
-  constructor(public navCtrl: NavController) {}
+    public test: any;
+    public variant: string;
+    public title: string;
+    public year: number;
+    public time: number;
+    public id: number;
+    data:any;
+  constructor(public navCtrl: NavController, public params: NavParams) {}
 
   ionViewDidLoad() {
     console.log('Hello StarttestPage Page');
+    this.data = this.params.get('test');
+    this.variant = this.data['variant'];
+    this.title = this.data['title'];
+    this.year = this.data['year'];
+    this.time = this.data['time'];
+    this.id = this.data['id'];
+
   }
-  gotodotest(){
-  	this.navCtrl.push(DotestPage);
+  gotodotest(id){
+  	this.navCtrl.push(DotestPage, {
+        id: id
+    });
   }
 }

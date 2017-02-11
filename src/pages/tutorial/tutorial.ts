@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { LessonPage } from '../lesson/lesson';
+
+import { Lessondata } from '../../providers/lessondata';
 /*
   Generated class for the Tutorial page.
 
@@ -15,10 +17,10 @@ import { LessonPage } from '../lesson/lesson';
 export class TutorialPage {
 
   cond: string = "niigem";
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public tutsService: Lessondata) {}
 
   ionViewDidLoad() {
-    console.log('Hello TutorialPage Page');
+    this.tutsService.load();
   }
   
   lesson(){

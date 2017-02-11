@@ -37,19 +37,19 @@
 
 	<div [ngSwitch]="cond">
 	  <ion-list no-lines *ngSwitchCase="'niigem'">
-	    <ion-item>
+	    <ion-item *ngFor="let tuts of tutsService.natural">
 	        <ion-card>
 
 			  <ion-card-content>
 			    <ion-grid>
 				  <ion-row>
-				    <ion-col class="time" width-10>16<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Физик</ion-col>
+				    <ion-col class="title" width-30>{{tuts.title}}</ion-col>
 				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button (click)="lesson()" color="dark" outline round>1</button>
-				    	<button ion-button (click)="lesson()" color="dark" outline round>2</button>
-				    	<button ion-button (click)="lesson()" color="dark" outline round>3</button>
+				    <ion-col width-50>
+				    	<button ion-button (click)="lesson(1)" color="dark" outline round>1</button>
+				    	<button ion-button (click)="lesson(2)" color="dark" outline round>2</button>
+				    	<button ion-button (click)="lesson(3)" color="dark" outline round>3</button>
+				    	<button ion-button (click)="lesson(4)" color="dark" outline round>4</button>
 				    </ion-col>
 				  </ion-row>
 				</ion-grid>
@@ -57,163 +57,23 @@
 
 			</ion-card>
 	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>18<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Математик</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button (click)="lesson()" color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>15<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Геометр</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>15<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Газар зүй</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>16<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Физик</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>18<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Математик</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>15<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Геометр</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>15<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Газар зүй</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
+	   
 	  </ion-list>
 
 	  <ion-list no-lines *ngSwitchCase="'baigali'">
-	    <ion-item>
+	    <ion-item *ngFor="let tuts of tutsService.social">
 	        <ion-card>
 
 			  <ion-card-content>
 			    <ion-grid>
 				  <ion-row>
 				    <ion-col class="time" width-10>16<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Монгол хэл</ion-col>
+				    <ion-col class="title" width-30>{{tuts.title}}</ion-col>
 				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
 				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
+				    	<button ion-button (click)="lesson(1)" color="dark" outline round>1</button>
+				    	<button ion-button (click)="lesson(2)" color="dark" outline round>2</button>
+				    	<button ion-button (click)="lesson(3)" color="dark" outline round>3</button>
 				    </ion-col>
 				  </ion-row>
 				</ion-grid>
@@ -221,46 +81,7 @@
 
 			</ion-card>
 	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>16<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Уран зохиол</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-				  <ion-row>
-				    <ion-col class="time" width-10>16<br>цаг</ion-col>
-				    <ion-col class="title" width-30>Монгол бичиг</ion-col>
-				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
-				    <ion-col width-30>
-				    	<button ion-button color="dark" outline round>1</button>
-				    	<button ion-button color="dark" outline round>2</button>
-				    	<button ion-button color="dark" outline round>3</button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
+	    
 	  </ion-list>
 	</div>
 </ion-content>
