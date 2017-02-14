@@ -7,9 +7,9 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { TestPage } from '../pages/test/test';
 import { MaterialPage } from '../pages/material/material';
 
-import { HomePage } from '../pages/home/home'; // login ordog home
+// import { HomePage } from '../pages/home/home'; // login ordog home
 
-// import { IntroPage } from '../pages/intro/intro';
+import { IntroPage } from '../pages/intro/intro';
 
 
 
@@ -28,7 +28,7 @@ export class MyApp {
 
 
   constructor(public platform: Platform, menu: MenuController,) {
-    this.rootPage = HomePage;
+    this.rootPage = IntroPage;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

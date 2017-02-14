@@ -18,5 +18,4 @@ export class MaterialPage {
   ionViewDidLoad() {
     console.log('Hello MaterialPage Page');
   }
-  cond: string = "niigem";
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { NavController, NavParams } from 'ionic-angular';
+import { Lessondata } from '../../providers/lessondata';
 /*
   Generated class for the Topic page.
 
@@ -12,11 +12,13 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'topic.html'
 })
 export class TopicPage {
+	title: string;
+	constructor(public navCtrl: NavController, public params: NavParams, public tutsService: Lessondata) {}
 
-  constructor(public navCtrl: NavController) {}
-
-  ionViewDidLoad() {
-    console.log('Hello TopicPage Page');
-  }
+	ionViewDidLoad() {
+		console.log('Hello TopicPage Page');
+		this.title = this.params.get('title');
+		this.tutsService.gettopicone( this.params.get('typeid'), this.params.get('topic') );
+	}
 
 }

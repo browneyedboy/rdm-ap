@@ -3,7 +3,6 @@ page-intro {
 	{
 		@include header-styles(color($colors, intro-header, base), color($colors, intro-header, contrast));
 	}
-
 	.intro-content
 	{
 		// Default background when bouncing isn't disabled
@@ -114,5 +113,12 @@ page-intro {
 				}
 			}
 		}
+	}
+	.content-ios{
+		.intro-image-row
+			{
+				margin-top: 25px !important;
+				margin-top: 2vh !important;
+			}
 	}
 }

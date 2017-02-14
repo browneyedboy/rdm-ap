@@ -24,39 +24,40 @@
 	<ion-grid class="bottom0" padding>
 	      <ion-row>
 			<ion-col width-50 class="left">
-				<h1 color="dark">Математик</h1>
+				<h1 color="dark">{{title}}</h1>
 			</ion-col>
 			<ion-col width-50 class="right">
-				<h1 color="dark">1-р улирал</h1>
+				<h1 color="dark">{{season}}-р улирал</h1>
 			</ion-col>
 	      </ion-row>
 	</ion-grid>
 	<ion-list no-lines>
-	    <ion-item>
+
+	    <ion-item *ngFor="let lesson of tutsService.lessons; let i = index ">
 	        <ion-card>
 
 			  <ion-card-content>
 			    <ion-grid>
 			      <ion-row>
 					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 1</h2>
+						<h2 color="primary">Хичээл {{i+1}}</h2>
 					</ion-col>
 					<ion-col width-50 class="right">
-						<button ion-button (click)="showtopics()" clear><ion-icon name="ios-arrow-down"></ion-icon></button>
+						<button ion-button (click)="showtopics(lesson.id)" clear><ion-icon name="ios-arrow-down"></ion-icon></button>
 					</ion-col>
 			      </ion-row>
-				  <ion-row class="topics" *ngIf="show" >
+				  <ion-row class="topics" *ngIf="show==lesson.id" >
 				    <ion-col width-25>
-				    	<button color="dark" (click)="gototopic()" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
+				    	<button color="dark" (click)="gototopic(lesson.type_id, 1, title)" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
 				    </ion-col>
 				    <ion-col width-25>
-				    	<button color="dark" (click)="gototopic()" ion-button clear>Сэдэв 2 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
+				    	<button color="dark" (click)="gototopic(lesson.type_id, 2, title)" ion-button clear>Сэдэв 2 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
 				    </ion-col>
 				    <ion-col width-25>
-				    	<button color="dark" (click)="gototopic()" ion-button clear>Сэдэв 3 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
+				    	<button color="dark" (click)="gototopic(lesson.type_id, 3, title)" ion-button clear>Сэдэв 3 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
 				    </ion-col>
 				    <ion-col width-25>
-				    	<button color="dark" (click)="gototopic()" ion-button clear>Сэдэв 4 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
+				    	<button color="dark" (click)="gototopic(lesson.type_id, 4, title)" ion-button clear>Сэдэв 4 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
 				    </ion-col>
 				  </ion-row>
 				</ion-grid>
@@ -64,267 +65,7 @@
 
 			</ion-card>
 	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-			      <ion-row>
-					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 2</h2>
-					</ion-col>
-					<ion-col width-50 class="right">
-						<button ion-button clear><ion-icon name="ios-arrow-down"></ion-icon></button>
-					</ion-col>
-			      </ion-row>
-				  <ion-row class="topics" *ngIf="show1" >
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-			      <ion-row>
-					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 3</h2>
-					</ion-col>
-					<ion-col width-50 class="right">
-						<button ion-button clear><ion-icon name="ios-arrow-down"></ion-icon></button>
-					</ion-col>
-			      </ion-row>
-				  <ion-row class="topics" *ngIf="show1" >
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-			      <ion-row>
-					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 4</h2>
-					</ion-col>
-					<ion-col width-50 class="right">
-						<button ion-button clear><ion-icon name="ios-arrow-down"></ion-icon></button>
-					</ion-col>
-			      </ion-row>
-				  <ion-row class="topics" *ngIf="show1" >
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-			      <ion-row>
-					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 5</h2>
-					</ion-col>
-					<ion-col width-50 class="right">
-						<button ion-button clear><ion-icon name="ios-arrow-down"></ion-icon></button>
-					</ion-col>
-			      </ion-row>
-				  <ion-row class="topics" *ngIf="show1" >
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-			      <ion-row>
-					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 6</h2>
-					</ion-col>
-					<ion-col width-50 class="right">
-						<button ion-button clear><ion-icon name="ios-arrow-down"></ion-icon></button>
-					</ion-col>
-			      </ion-row>
-				  <ion-row class="topics" *ngIf="show1" >
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-			      <ion-row>
-					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 7</h2>
-					</ion-col>
-					<ion-col width-50 class="right">
-						<button ion-button clear><ion-icon name="ios-arrow-down"></ion-icon></button>
-					</ion-col>
-			      </ion-row>
-				  <ion-row class="topics" *ngIf="show1" >
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-			      <ion-row>
-					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 8</h2>
-					</ion-col>
-					<ion-col width-50 class="right">
-						<button ion-button clear><ion-icon name="ios-arrow-down"></ion-icon></button>
-					</ion-col>
-			      </ion-row>
-				  <ion-row class="topics" *ngIf="show1" >
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
-	    <ion-item>
-
-	        <ion-card>
-
-			  <ion-card-content>
-			    <ion-grid>
-			      <ion-row>
-					<ion-col width-50 class="left">
-						<h2 color="primary">Хичээл 9</h2>
-					</ion-col>
-					<ion-col width-50 class="right">
-						<button ion-button clear><ion-icon name="ios-arrow-down"></ion-icon></button>
-					</ion-col>
-			      </ion-row>
-				  <ion-row class="topics" *ngIf="show1" >
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				    <ion-col width-25>
-				    	<button color="dark" ion-button clear>Сэдэв 1 <ion-icon name="ios-arrow-forward" item-right></ion-icon></button>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			  </ion-card-content>
-
-			</ion-card>
-	    </ion-item>
+	    
+	    
 	</ion-list>
 </ion-content>

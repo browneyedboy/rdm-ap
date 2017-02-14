@@ -23,8 +23,12 @@ export class TutorialPage {
     this.tutsService.load();
   }
   
-  lesson(){
-  	this.navCtrl.push(LessonPage);
+  lesson(id, typeid, title){
+  	this.navCtrl.push(LessonPage, {
+      id: id,
+      typeid: typeid,
+      title: title
+    });
   }
 
 }

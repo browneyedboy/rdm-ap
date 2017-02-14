@@ -13,6 +13,8 @@ export class Lessondata {
 	natural: any = [];
 	social: any = [];
     tests: any = [];
+    lessons: any = [];
+    topic: any = [];
   constructor(public http: Http) {
     console.log('Hello Lessondata Provider');
   }
@@ -21,7 +23,6 @@ export class Lessondata {
   	this.http.get('http://127.0.0.1:8000/get/naturalscience').map(
     res => res.json()).subscribe(data => {
         this.natural = data;
-        console.log( JSON.stringify( data ) );
     },
     err => {
         console.log("Oops!");
@@ -41,7 +42,7 @@ export class Lessondata {
   	this.http.get('http://127.0.0.1:8000/get/naturalsciencetest').map(
     res => res.json()).subscribe(data => {
         this.natural = data;
-        console.log( JSON.stringify( data ) );
+        // console.log( JSON.stringify( data ) );
     },
     err => {
         console.log("Oops!");
@@ -63,7 +64,26 @@ export class Lessondata {
     },
     err => {
         console.log("Oops!");
-    }); 
+    });
+  }
+  getlesson(id, typid){
+    this.http.get('http://127.0.0.1:8000/get/getlesson/'+id+'/'+typid).map(
+    res => res.json()).subscribe(data => {
+        this.lessons = data;
+    },
+    err => {
+        console.log("Oops!");
+    });
+  }
+
+  gettopicone(typeid, topicid){
+    this.http.get('http://127.0.0.1:8000/get/gettopicone/'+typeid+'/'+topicid).map(
+    res => res.json()).subscribe(data => {
+        this.topic = data;
+    },
+    err => {
+        this.topic = 0;
+    });
   }
 }
 

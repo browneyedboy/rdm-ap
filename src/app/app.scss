@@ -94,7 +94,7 @@ ion-tabs .tabbar {
 .menuprofile{
 	border-bottom: 1px solid #dedede !important;
     padding-bottom: 7px;
-    margin-top: 5px;
+    padding-top: 5px;
 }
 .ion-item {
     padding-left: 11px !important;
@@ -111,7 +111,11 @@ ion-tabs .tabbar {
 	border-bottom:1px solid #eee;
 	margin-bottom: 1px;
 }
-
+.menuprofile{
+	.item-inner {
+    	border-bottom: 0 !important;
+	}
+}
 
 
 

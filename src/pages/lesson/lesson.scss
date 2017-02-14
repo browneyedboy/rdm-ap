@@ -8,6 +8,12 @@ page-lesson {
 	    line-height: 0;
 	    padding: 0 !important;
 	}
+	.content-ios{
+		ion-item{
+			padding-left: 0;
+		}	
+	}
+	
 	.right{
 		text-align: right;
 	}

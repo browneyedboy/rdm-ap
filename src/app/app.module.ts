@@ -13,6 +13,8 @@ import { TestPage } from '../pages/test/test';
 import { MypointPage } from '../pages/mypoint/mypoint';
 import { LessonPage } from '../pages/lesson/lesson';
 import { ProfilePage } from '../pages/profile/profile';
+import { RealsearchPage } from '../pages/realsearch/realsearch';
+
 import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
 import { MaterialPage } from '../pages/material/material';
@@ -46,7 +48,8 @@ import { Lessondata } from '../providers/lessondata';
     BackgroundImage,
     MaterialPage,
     StarttestPage,
-    EditprofilePage
+    EditprofilePage,
+    RealsearchPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -73,7 +76,8 @@ import { Lessondata } from '../providers/lessondata';
     DotestPage,
     MaterialPage,
     StarttestPage,
-    EditprofilePage
+    EditprofilePage,
+    RealsearchPage
   ],
   providers: [ListingService, Lessondata],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

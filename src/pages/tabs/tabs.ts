@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { FavoritePage } from '../favorite/favorite';
 import { TutorialPage } from '../tutorial/tutorial';
 import { SearchPage } from '../search/search';
 import { TestPage } from '../test/test';
 import { MypointPage } from '../mypoint/mypoint';
+import {RealsearchPage} from '../realsearch/realsearch';
+
 
 /*
   Generated class for the Tabs page.
@@ -18,9 +19,9 @@ import { MypointPage } from '../mypoint/mypoint';
 })
 
 export class TabsPage {
-  tab1Root: any = FavoritePage;
+  tab1Root: any = SearchPage;
   tab2Root: any = TutorialPage;
-  tab3Root: any = SearchPage;
+  tab3Root: any = RealsearchPage;
   tab4Root: any = TestPage;
   tab5Root: any = MypointPage;
 

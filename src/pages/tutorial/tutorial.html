@@ -46,10 +46,10 @@
 				    <ion-col class="title" width-30>{{tuts.title}}</ion-col>
 				    <ion-col class="choose" width-20>улирал<br>сонгох</ion-col>
 				    <ion-col width-50>
-				    	<button ion-button (click)="lesson(1)" color="dark" outline round>1</button>
-				    	<button ion-button (click)="lesson(2)" color="dark" outline round>2</button>
-				    	<button ion-button (click)="lesson(3)" color="dark" outline round>3</button>
-				    	<button ion-button (click)="lesson(4)" color="dark" outline round>4</button>
+				    	<button ion-button (click)="lesson(1, tuts.id, tuts.title)" color="dark" outline round>1</button>
+				    	<button ion-button (click)="lesson(2, tuts.id, tuts.title)" color="dark" outline round>2</button>
+				    	<button ion-button (click)="lesson(3, tuts.id, tuts.title)" color="dark" outline round>3</button>
+				    	<button ion-button (click)="lesson(4, tuts.id, tuts.title)" color="dark" outline round>4</button>
 				    </ion-col>
 				  </ion-row>
 				</ion-grid>

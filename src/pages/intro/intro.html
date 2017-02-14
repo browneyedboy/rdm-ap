@@ -1,7 +1,7 @@
 <ion-header class="intro-header">
   <ion-toolbar>
     <ion-buttons end>
-      <button ion-button class="skip-button" (click)="skipIntro()" [hidden]="lastSlide">Алгасах</button>
+      <button ion-button class="skip-button" (click)="login()" [hidden]="lastSlide">Алгасах</button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -53,24 +53,6 @@
         "Хаашаа явж байгаагаа мэддэг хүнд дэлхий замын зааж өгдөг" <br /> <b>"Ралф Валдо Эмерсон"</b>
       </p>
     </ion-slide>
-    <ion-slide class="slide-4">
-      <ion-row class="intro-image-row">
-        <ion-col center width-64 no-padding>
-          <preload-image [ratio]="{w:1, h:1}" src="./assets/img/intro_slide_4.png" alt="Logo" title="Erdem12"></preload-image>
-        </ion-col>
-      </ion-row>
-      <h2 class="main-title">Сар үнэгүй ашиглаад үзээрэй!</h2>
-      <p class="intro-text">
-        Сард ердөө <b>25 000 ₮</b> төлөөд цааш ашиглах боломжтой
-      </p>
-      <br />
-      <p class="intro-text">
-       За ингээд бид эхлэхэд бэлэн боллоо!
-      </p>
-      <div class="button-bar">
-        <button ion-button primary (click)="login()">Нэвтрэх</button> 
-        <button ion-button primary >Бүртгүүлэх</button>
-      </div>
-    </ion-slide>
+    
   </ion-slides>
 </ion-content>

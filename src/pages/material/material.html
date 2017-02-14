@@ -21,33 +21,9 @@
 
 
 <ion-content>
-  <div>
-    <ion-segment [(ngModel)]="cond">
-      <ion-segment-button value="niigem">
-        Нийгмийн ухаан
-      </ion-segment-button>
-      <ion-segment-button value="baigali">
-        Байгалийн ухаан
-      </ion-segment-button>
-    </ion-segment>
-  </div>
 
-  <div [ngSwitch]="cond">
-	  <ion-list no-lines *ngSwitchCase="'niigem'">
+	<ion-list no-lines>
 	    <ion-item>
-        <ion-card>
-          <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Нийгмийн ухаан</button>
-        </ion-card>
-        <ion-card>
-          <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Хими</button>
-        </ion-card>
-        <ion-card>
-
-          <button ion-item>
-            <ion-icon name="ios-arrow-forward" item-right></ion-icon>
-            Биологи
-          </button>
-        </ion-card>
         <ion-card>
           <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Газарзүй</button>
         </ion-card>
@@ -58,34 +34,6 @@
           <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Газарзүй</button>
         </ion-card>
 	    </ion-item>
-  </ion-list>
-
-
-  <ion-list no-lines *ngSwitchCase="'baigali'">
-    <ion-item>
-        <ion-card>
-          <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Биологи</button>
-        </ion-card>
-        <ion-card>
-          <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Хими</button>
-        </ion-card>
-        <ion-card>
-          <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Биологи</button>
-        </ion-card>
-        <ion-card>
-          <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Газарзүй</button>
-        </ion-card>
-        <ion-card>
-          <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Биологи</button>
-        </ion-card>
-        <ion-card>
-          <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>Газарзүй</button>
-        </ion-card>
-    </ion-item>
-  </ion-list>
-</div>
-
-
-
+   </ion-list>
 
 </ion-content>

@@ -4,5 +4,9 @@ page-tutorial {
 			margin: 0 !important;
 		}	
 	}
-	
+	.content-ios{
+		ion-item{
+			padding-left: 0;
+		}	
+	}
 }

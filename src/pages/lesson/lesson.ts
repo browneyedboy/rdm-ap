@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { NavController, NavParams } from 'ionic-angular';
+import { Lessondata } from '../../providers/lessondata';
 import { TopicPage } from '../topic/topic';
 /*
   Generated class for the Lesson page.
@@ -15,16 +15,26 @@ import { TopicPage } from '../topic/topic';
 export class LessonPage {
   public show = false;
   public show1 = false;
-  constructor(public navCtrl: NavController) {}
+  season: number;
+  title: string;
+  constructor(public navCtrl: NavController, public params: NavParams, public tutsService: Lessondata) {}
 
-  ionViewDidLoad() {
-    console.log('Hello LessonPage Page');
+  ionViewDidLoad(){ 
+      this.tutsService.getlesson(this.params.get('id'), this.params.get('typeid'));
+      this.season = this.params.get('id');
+      this.title = this.params.get('title');
+      console.log('Hello LessonPage Page');
   }
-  showtopics(){
-  	this.show = !this.show;
+  showtopics(id){
+
+  	this.show = id;
   }
-  gototopic(){
-  	this.navCtrl.push(TopicPage);
+  gototopic(typeid, topic, title ){
+  	this.navCtrl.push(TopicPage, {
+          typeid: typeid,
+          topic: topic,
+          title: title
+      });
   }
 
 }

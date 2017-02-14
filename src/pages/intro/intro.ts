@@ -27,15 +27,6 @@ export class IntroPage {
     console.log('Hello IntroPage Page');
   }
 
-  skipIntro() {
-    // You can skip to main app
-    // this.nav.setRoot(TabsNavigationPage);
-
-    // Or you can skip to last slide (login/signup slide)
-    this.lastSlide = true;
-    this.slider.slideTo(this.slider.length());
-  }
-
   onSlideChanged() {
     // If it's the last slide, then hide the 'Skip' button on the header
     this.lastSlide = this.slider.isEnd();
