@@ -8,51 +8,28 @@
 
 <ion-content class="intro-content">
   <ion-slides #slider (ionDidChange)="onSlideChanged()" [options]="slide_options">
-    <ion-slide class="slide-1">
-      <ion-row class="intro-image-row">
-        <ion-col center width-64 no-padding>
-           <preload-image [ratio]="{w:1, h:1}" src="./assets/img/intro_logo_framed.png" alt="Logo" title="Erdem12"></preload-image>
-        </ion-col>
-      </ion-row>
-      <h2 class="main-title">Сайн уу! :) </h2>
-      <p class="intro-text">
-        Сурагч та манай аппыг ашиглан оюутан болох том гараагаа хийхдээ бэлдээрэй.
-      </p>
-      <br />
-      <p class="intro-text">
-        "Бэлдэнэ гэдэг амжилтийн 90% амрана гэдэг" 10%.<br /> <b>"Хэнри Форд"</b>
-      </p>
-    </ion-slide>
-    <ion-slide class="slide-2">
-      <ion-row class="intro-image-row">
-        <ion-col center width-64 no-padding>
-         <preload-image [ratio]="{w:1, h:1}" src="./assets/img/intro_slide_2.png" alt="Logo" title="Erdem12"></preload-image>
-        </ion-col>
-      </ion-row>
-      <h2 class="main-title">Бүх хичээл нэг дор</h2>
-      <p class="intro-text">
-        Манай аппаар дамжуулан ерөнхий боловсролын хичээлүүдийг бүгдийг видео болон цахим хэлбэрээр нөхөн үзэх боломжтой.
-      </p>
-      <br />
-      <p class="intro-text">
-        "Сур сур бас дахин сур" <br /> <b>"В.И Ленин"</b>
-      </p>
-    </ion-slide>
-    <ion-slide class="slide-3">
-      <ion-row class="intro-image-row">
-        <ion-col center width-64 no-padding>
-          <preload-image [ratio]="{w:1, h:1}" src="./assets/img/intro_slide_3.png" alt="Logo" title="Erdem12"></preload-image>
-        </ion-col>
-      </ion-row>
-      <h2 class="main-title">Онлайнаар тест бөглөх боломжтой</h2>
-      <p class="intro-text">
-        Өнгөрсөн жилүүдийн ЕБСШ -с сонгон шалгалтаа өгөн өөрийг сорьж үзээрэй.
-      </p>
-      <br />
-      <p class="intro-text">
-        "Хаашаа явж байгаагаа мэддэг хүнд дэлхий замын зааж өгдөг" <br /> <b>"Ралф Валдо Эмерсон"</b>
-      </p>
+    
+    <ion-slide class="slide-1" *ngFor="let banner of tutsService.banners">
+           <preload-image [ratio]="{w:1, h:1}" src="http://erdem12.mongoliajourney.com/storage/{{banner.image}}"></preload-image>
     </ion-slide>
     
+    <ion-slide class="slide-4">
+      <ion-row class="intro-image-row">
+        <ion-col center width-64 no-padding>
+            <preload-image [ratio]="{w:1, h:1}" src="./assets/img/intro_slide_4.png" class="lastimage" title="Erdem12"></preload-image>
+        </ion-col>
+      </ion-row>
+      <h2 class="main-title">Сар үнэгүй ашиглаад үзээрэй!</h2>
+      <p class="intro-text">
+        Сард ердөө <b>25 000 ₮</b> төлөөд цааш ашиглах боломжтой
+      </p>
+      <br />
+      <p class="intro-text">
+       За ингээд бид эхлэхэд бэлэн боллоо!
+      </p>
+      <div class="button-bar">
+        <button (click)="login()" ion-button primary >Нэвтрэх</button> 
+      </div>
+    </ion-slide>
   </ion-slides>
 </ion-content>

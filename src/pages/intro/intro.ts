@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
-
+import { Lessondata } from '../../providers/lessondata';
 import { HomePage } from '../home/home';
 /*
   Generated class for the Intro page.
@@ -21,10 +21,11 @@ export class IntroPage {
 
   @ViewChild('slider') slider: Slides;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public tutsService: Lessondata) {}
 
   ionViewDidLoad() {
     console.log('Hello IntroPage Page');
+    this.tutsService.banner();
   }
 
   onSlideChanged() {

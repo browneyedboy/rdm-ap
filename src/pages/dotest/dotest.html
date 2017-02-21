@@ -23,28 +23,28 @@
 <ion-grid>
     <ion-row>
       <ion-col width-33 class="variant">
-        <span>Монгол хэл</span>
-        <span>Вариант: А</span>
-        <span>2010: он</span>
-        <span>Оноо: 800</span>
+        <!-- <span>{{tutsService.title}}</span>
+        <span>Вариант: {{test.variant}}</span>
+        <span>{{test.year}}: он</span>
+        <span>Оноо: {{test.score}}</span> -->
       </ion-col>
       <ion-col width-33 class="asuult">
-          <p>
+          <!-- <p>
             Асуулт<br>
             1
-          </p>
+          </p> -->
 
       </ion-col>
       <ion-col width-33>
         <h1 class="minut">
-          30:39
+          <!-- {{test.time}} -->
         </h1>
       </ion-col>
     </ion-row>
 </ion-grid>
 
 <ion-slides #qSlider (ionDidChange)="onSlideChanged()" [options]="slideOptions">
-  <ion-slide *ngFor="let test of tutsService.tests">
+  <ion-slide *ngFor="let test of tutsService.tests; let i = index ">
         <ion-grid>
           <ion-row>
             <ion-col>
@@ -53,12 +53,39 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-      <ion-list radio-group [(ngModel)]="colors" (ionChange)="colorchanged()">
-        <!-- <ion-card *ngFor="let answer of answersdo(test.content)"> -->
-        <ion-card *ngIf="(test.content)">
+      <ion-list radio-group [(ngModel)]="colors[i]" (ionChange)="colorchanged(i)">
+        <ion-card *ngIf(answers(test.content).a)>
           <ion-item>
-            <ion-label>Тийм</ion-label>
-            <ion-radio  color="dark" value="1" ></ion-radio >
+            <ion-label>{{answers(test.content).a}}</ion-label>
+            <ion-radio  color="a" value="a" ></ion-radio >
+          </ion-item>
+        </ion-card>
+        
+        <ion-card  *ngIf(answers(test.content).b)>
+          <ion-item>
+            <ion-label>{{answers(test.content).b}}</ion-label>
+            <ion-radio  color="b" value="b" ></ion-radio >
+          </ion-item>
+        </ion-card>
+
+        <ion-card  *ngIf(answers(test.content).c)>
+          <ion-item>
+            <ion-label>{{answers(test.content).c}}</ion-label>
+            <ion-radio  color="c" value="c" ></ion-radio >
+          </ion-item>
+        </ion-card>
+
+        <ion-card  *ngIf(answers(test.content).d)>
+          <ion-item>
+            <ion-label>{{answers(test.content).d}}</ion-label>
+            <ion-radio  color="d" value="d" ></ion-radio >
+          </ion-item>
+        </ion-card>
+
+        <ion-card  *ngIf(answers(test.content).e)>
+          <ion-item>
+            <ion-label>{{answers(test.content).e}}</ion-label>
+            <ion-radio  color="e" value="e" ></ion-radio >
           </ion-item>
         </ion-card>
         

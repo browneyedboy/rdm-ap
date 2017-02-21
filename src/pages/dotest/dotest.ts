@@ -13,23 +13,23 @@ import { Lessondata } from '../../providers/lessondata';
   templateUrl: 'dotest.html'
 })
 export class DotestPage {
-
+	
 	constructor(public navCtrl: NavController, public params: NavParams, public tutsService: Lessondata) {
 		this.tutsService.gettests(this.params.get('id'));
 		// console.log(tests);
 	}
 	
-	// ionViewDidLoad(){
-		
-	// }
+	ionViewDidLoad() {
+		console.log('Hello DotestPage Page');
+	}
+
 	jsonparse(json){
 		var parsed = JSON.parse(json);
 		return parsed.question;
 	}
 	answers(json){
 		var parsed = JSON.parse(json);
-		console.log(parsed.answers);
-		return parsed.answers;
+		return (parsed.answers);
 	}
 	slideOptions = {
 		loop: false,
@@ -52,12 +52,9 @@ export class DotestPage {
 	slideNext(){
 		this.slider.slideNext();
 	}
-	ionViewDidLoad() {
-		console.log('Hello DotestPage Page');
-	}
 
-	colorchanged(){
-		console.log(this.colors);
+	colorchanged(i){
+		console.log(this.colors[i]);
 	}
 
 

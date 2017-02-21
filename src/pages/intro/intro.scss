@@ -44,8 +44,7 @@ page-intro {
 
 			.intro-image-row
 			{
-				margin-top: 90px;
-				margin-top: 16vh;
+				margin: 90px 20px 20px;
 			}
 
 			.main-title
@@ -120,5 +119,20 @@ page-intro {
 				margin-top: 25px !important;
 				margin-top: 2vh !important;
 			}
+	}
+	.swiper-slide img{
+		position: relative !important;
+	    width: 100% !important;
+	    height: 100% !important;
+	}
+	preload-image{
+		margin-left: 0;
+	}
+	ion-header:after{
+		background: none !important;
+	}
+	.lastimage{
+		margin-left: 22%;
+		padding-bottom: 0 !important;
 	}
 }

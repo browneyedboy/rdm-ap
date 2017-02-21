@@ -15,12 +15,16 @@ export class Lessondata {
     tests: any = [];
     lessons: any = [];
     topic: any = [];
+    universities: any = [];
+    banners: any =[];
+    
   constructor(public http: Http) {
     console.log('Hello Lessondata Provider');
   }
+
   load(){
 
-  	this.http.get('http://127.0.0.1:8000/get/naturalscience').map(
+  	this.http.get('http://erdem12.mongoliajourney.com/get/naturalscience').map(
     res => res.json()).subscribe(data => {
         this.natural = data;
     },
@@ -28,18 +32,10 @@ export class Lessondata {
         console.log("Oops!");
     });
 
-    this.http.get('http://127.0.0.1:8000/get/socialscience').map(
-    res => res.json()).subscribe(data => {
-        this.social = data;
-    },
-    err => {
-        console.log("Oops!");
-    }); 
-
   }
   loadtest(){
 
-  	this.http.get('http://127.0.0.1:8000/get/naturalsciencetest').map(
+  	this.http.get('http://erdem12.mongoliajourney.com/get/naturalsciencetest').map(
     res => res.json()).subscribe(data => {
         this.natural = data;
         // console.log( JSON.stringify( data ) );
@@ -48,7 +44,7 @@ export class Lessondata {
         console.log("Oops!");
     });
 
-    this.http.get('http://127.0.0.1:8000/get/socialsciencetest').map(
+    this.http.get('http://erdem12.mongoliajourney.com/get/socialsciencetest').map(
     res => res.json()).subscribe(data => {
         this.social = data;
     },
@@ -58,7 +54,7 @@ export class Lessondata {
   	
   }
   gettests(id){
-    this.http.get('http://127.0.0.1:8000/get/gettests/'+id).map(
+    this.http.get('http://erdem12.mongoliajourney.com/get/gettests/'+id).map(
     res => res.json()).subscribe(data => {
         this.tests = data;
     },
@@ -67,7 +63,7 @@ export class Lessondata {
     });
   }
   getlesson(id, typid){
-    this.http.get('http://127.0.0.1:8000/get/getlesson/'+id+'/'+typid).map(
+    this.http.get('http://erdem12.mongoliajourney.com/get/getlesson/'+id+'/'+typid).map(
     res => res.json()).subscribe(data => {
         this.lessons = data;
     },
@@ -77,7 +73,7 @@ export class Lessondata {
   }
 
   gettopicone(typeid, topicid){
-    this.http.get('http://127.0.0.1:8000/get/gettopicone/'+typeid+'/'+topicid).map(
+    this.http.get('http://erdem12.mongoliajourney.com/get/gettopicone/'+typeid+'/'+topicid).map(
     res => res.json()).subscribe(data => {
         this.topic = data;
     },
@@ -85,6 +81,28 @@ export class Lessondata {
         this.topic = 0;
     });
   }
+
+  getuniversities(){
+    this.http.get('http://erdem12.mongoliajourney.com/get/getuniversities').map(
+        res => res.json()).subscribe(data => {
+        this.universities = data;
+    },
+    err => {
+        this.topic = 0;
+    });
+  }
+
+  banner(){ 
+    this.http.get('http://erdem12.mongoliajourney.com/get/banners').map(
+        res => res.json()).subscribe(data => {
+        this.banners = data;
+        console.log(data);
+    },
+    err => {
+        this.banners = 0;
+    });
+  }
+
 }
 
 
