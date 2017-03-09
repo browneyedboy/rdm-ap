@@ -116,6 +116,23 @@ ion-tabs .tabbar {
     	border-bottom: 0 !important;
 	}
 }
+.timerclass{
+	margin: 0 !important;
+	width: auto;
+    border: 0;
+    box-shadow: none;
+    ion-item{
+    	padding: 0;
+    } 
+    ion-label, button{
+    	margin:0 !important;
+    	padding: 0 !important;
+    }
+    button{
+    	height: 1.8em;
+    }
+
+}
 
 
 

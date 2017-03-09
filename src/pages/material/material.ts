@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Lessondata } from '../../providers/lessondata';
+import {AboutuniPage} from '../aboutuni/aboutuni';
 /*
-  Generated class for the Material page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
+   ih surguuliud
 */
 @Component({
   selector: 'page-material',
@@ -21,6 +19,9 @@ export class MaterialPage {
     this.tutsService.getuniversities();
   }
   aboutunivsity(uni){
-  	console.log(uni);
+  	this.navCtrl.push(AboutuniPage, {
+      data: uni
+    });
   }
+
 }

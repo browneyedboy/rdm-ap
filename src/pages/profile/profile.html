@@ -27,12 +27,13 @@
       <ion-item>
 
          <img class="profile-imaj" src="assets/img/profile.png">
+         {{image}}
          <!-- <button ion-button icon-only >
            <ion-icon name="create"></ion-icon>
          </button> -->
-         <div class="card-title">{{ firstname }}</div>
+         <div class="card-title">{{ name }}</div>
          <!-- <ion-item> -->
-            <button ion-button color="dark" (click)="edit()" clear>Засах</button>
+            <button ion-button color="dark" (click)="edit(userid)" clear>Засах</button>
          <!-- </ion-item> -->
        </ion-item>
 

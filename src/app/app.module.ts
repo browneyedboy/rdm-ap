@@ -17,10 +17,16 @@ import { RealsearchPage } from '../pages/realsearch/realsearch';
 
 import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
+import { TimerComponent } from '../pages/dotest/timer';
 import { MaterialPage } from '../pages/material/material';
 import { StarttestPage } from '../pages/starttest/starttest';
 import { ListingService } from '../pages/search/search.service';
 import { EditprofilePage } from '../pages/editprofile/editprofile';
+import { ResultPage } from '../pages/result-page/result-page';
+import {ForgotpassPage} from '../pages/forgotpass/forgotpass';
+import {AboutuniPage} from '../pages/aboutuni/aboutuni';
+
+
 
 import { PreloadImage } from '../components/preload-image/preload-image';
 import { BackgroundImage } from '../components/background-image/background-image';
@@ -49,7 +55,11 @@ import { Lessondata } from '../providers/lessondata';
     MaterialPage,
     StarttestPage,
     EditprofilePage,
-    RealsearchPage
+    RealsearchPage,
+    TimerComponent,
+    ResultPage,
+    ForgotpassPage,
+    AboutuniPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -77,7 +87,11 @@ import { Lessondata } from '../providers/lessondata';
     MaterialPage,
     StarttestPage,
     EditprofilePage,
-    RealsearchPage
+    RealsearchPage,
+    TimerComponent,
+    ResultPage,
+    ForgotpassPage,
+    AboutuniPage
   ],
   providers: [ListingService, Lessondata],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

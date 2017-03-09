@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { Lessondata } from '../../providers/lessondata';
 
 import { RegisterPage } from '../register/register';
+import { ForgotpassPage } from '../forgotpass/forgotpass';
 import { TabsPage } from '../tabs/tabs';
+
 
 @Component({
   selector: 'page-home',
@@ -12,7 +15,7 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class HomePage {
   login: FormGroup;
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public tutsService: Lessondata, public toastCtrl: ToastController) {
     this.login = new FormGroup({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
@@ -20,13 +23,35 @@ export class HomePage {
 
   }
   logindo(){
-    // var currentUser = Parse.User.current();
     console.log('login do');
-    this.navCtrl.push(TabsPage);
-    
+    this.tutsService.loginuser(this.login.value.email, this.login.value.password);
+    console.log(this.tutsService.userloggedin);
+    if(this.tutsService.userloggedin == 1) {
+        this.navCtrl.push(TabsPage);
+    }else{
+      
+      let toast = this.toastCtrl.create({
+          message: 'Нэвтэрч чадсангүй! Нууг үг, имэйл хаягаа дахин шалгана уу!',
+          duration: 3000,
+          position: 'top',
+          cssClass: 'toast-message'
+      });
+
+      toast.onDidDismiss(() => {
+          console.log('Dismissed toast');
+      });
+
+      toast.present();
+    }
     
   }
   register(){
   	this.navCtrl.push(RegisterPage);
+  }
+  forgotpass(){
+    this.navCtrl.push(ForgotpassPage);
+  }
+  godemo(){
+    this.navCtrl.push(TabsPage);
   }
 }

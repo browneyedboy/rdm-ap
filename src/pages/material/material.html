@@ -25,7 +25,7 @@
 	<ion-list no-lines>
 	    <ion-item>
             <ion-card *ngFor="let uni of tutsService.universities">
-              <button click="aboutunivsity(uni)" ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>{{uni.title}}</button>
+              <button (click)="aboutunivsity(uni)" ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>{{uni.title}}</button>
             </ion-card>
 	    </ion-item>
    </ion-list>

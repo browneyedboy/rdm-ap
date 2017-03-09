@@ -17,6 +17,8 @@ export class Lessondata {
     topic: any = [];
     universities: any = [];
     banners: any =[];
+    userregistered: any= 0;
+    userloggedin: any=0;
     
   constructor(public http: Http) {
     console.log('Hello Lessondata Provider');
@@ -96,11 +98,29 @@ export class Lessondata {
     this.http.get('http://erdem12.mongoliajourney.com/get/banners').map(
         res => res.json()).subscribe(data => {
         this.banners = data;
-        console.log(data);
     },
     err => {
         this.banners = 0;
     });
+  }
+  registeruser(phone, email){
+    // this.http.get('http://erdem12.mongoliajourney.com/post/register/'+phone+'/'+email+'/'appkeycode)
+    this.http.get('http://erdem12.mongoliajourney.com/post/register/'+phone+'/'+email).map(
+    res => res.json()).subscribe(data => {
+        this.userregistered = data;
+    },
+    err => {
+        this.userregistered = 0;
+    });
+  }
+  loginuser(email, password){
+    this.http.get('http://erdem12.mongoliajourney.com/post/login/'+email+'/'+password).map(
+    res => res.json()).subscribe(data => {
+        this.userloggedin = data;
+    },
+    err => {
+        this.userloggedin = 0;
+    });   
   }
 
 }
