@@ -12,13 +12,17 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'aboutuni.html'
 })
 export class AboutuniPage {
-	public data: any;
+	public logo: any;
+	public description: any;
+	public title: any;
   constructor(public navCtrl: NavController, public params: NavParams) {}
 
   ionViewDidLoad() {
     console.log('Hello AboutuniPage Page');
-    	this.data = this.params.get('data');
-    	console.log(this.data);
+    	var data = this.params.get('data');
+    	this.logo = data.logo;
+    	this.title = data.title;
+    	this.description = data.description;
   }
 
 }

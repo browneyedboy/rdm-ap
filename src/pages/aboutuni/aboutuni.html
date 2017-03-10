@@ -14,15 +14,16 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 	<ion-card>
 	  <ion-card-header>
-	    logo
+	    <img src="http://erdem12.mongoliajourney.com/storage/{{logo}}" style="width: 40px;margin: 0 auto;">
 	    <br>
-	    title
+	    <p><strong>{{title}}</strong></p>
 	  </ion-card-header>
-	  <ion-card-content>
-	    desciption
+	  <ion-card-content padding>
+	    <div [innerHTML]="description"></div>
+	    <button ion-button color="dark" clear>Мэргэжлийг ангиуд</button>
 	  </ion-card-content>
 	</ion-card>
 </ion-content>
