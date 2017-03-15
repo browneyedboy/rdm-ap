@@ -10,30 +10,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LessonPage } from '../lesson/lesson';
+import { Lessondata } from '../../providers/lessondata';
 /*
   Generated class for the Tutorial page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-export var TutorialPage = (function () {
-    function TutorialPage(navCtrl) {
+var TutorialPage = (function () {
+    function TutorialPage(navCtrl, tutsService) {
         this.navCtrl = navCtrl;
+        this.tutsService = tutsService;
         this.cond = "niigem";
     }
     TutorialPage.prototype.ionViewDidLoad = function () {
-        console.log('Hello TutorialPage Page');
+        this.tutsService.load();
     };
-    TutorialPage.prototype.lesson = function () {
-        this.navCtrl.push(LessonPage);
+    TutorialPage.prototype.lesson = function (id, typeid, title) {
+        this.navCtrl.push(LessonPage, {
+            id: id,
+            typeid: typeid,
+            title: title
+        });
     };
-    TutorialPage = __decorate([
-        Component({
-            selector: 'page-tutorial',
-            templateUrl: 'tutorial.html'
-        }), 
-        __metadata('design:paramtypes', [NavController])
-    ], TutorialPage);
     return TutorialPage;
 }());
+TutorialPage = __decorate([
+    Component({
+        selector: 'page-tutorial',
+        templateUrl: 'tutorial.html'
+    }),
+    __metadata("design:paramtypes", [NavController, Lessondata])
+], TutorialPage);
+export { TutorialPage };
 //# sourceMappingURL=tutorial.js.map

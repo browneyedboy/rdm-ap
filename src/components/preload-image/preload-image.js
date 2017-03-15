@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component, Input, ElementRef, Renderer } from '@angular/core';
 import { isPresent } from 'ionic-angular/util/util';
-export var PreloadImage = (function () {
+var PreloadImage = (function () {
     function PreloadImage(_elementRef, _renderer) {
         this._elementRef = _elementRef;
         this._renderer = _renderer;
@@ -56,31 +56,32 @@ export var PreloadImage = (function () {
     PreloadImage.prototype._loaded = function (isLoaded) {
         this._elementRef.nativeElement.classList[isLoaded ? 'add' : 'remove']('img-loaded');
     };
-    __decorate([
-        Input(), 
-        __metadata('design:type', String)
-    ], PreloadImage.prototype, "alt", void 0);
-    __decorate([
-        Input(), 
-        __metadata('design:type', String)
-    ], PreloadImage.prototype, "title", void 0);
-    __decorate([
-        Input(), 
-        __metadata('design:type', String), 
-        __metadata('design:paramtypes', [String])
-    ], PreloadImage.prototype, "src", null);
-    __decorate([
-        Input(), 
-        __metadata('design:type', Object), 
-        __metadata('design:paramtypes', [Object])
-    ], PreloadImage.prototype, "ratio", null);
-    PreloadImage = __decorate([
-        Component({
-            selector: 'preload-image',
-            templateUrl: 'preload-image.html'
-        }), 
-        __metadata('design:paramtypes', [ElementRef, Renderer])
-    ], PreloadImage);
     return PreloadImage;
 }());
+__decorate([
+    Input(),
+    __metadata("design:type", String)
+], PreloadImage.prototype, "alt", void 0);
+__decorate([
+    Input(),
+    __metadata("design:type", String)
+], PreloadImage.prototype, "title", void 0);
+__decorate([
+    Input(),
+    __metadata("design:type", String),
+    __metadata("design:paramtypes", [String])
+], PreloadImage.prototype, "src", null);
+__decorate([
+    Input(),
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], PreloadImage.prototype, "ratio", null);
+PreloadImage = __decorate([
+    Component({
+        selector: 'preload-image',
+        templateUrl: 'preload-image.html'
+    }),
+    __metadata("design:paramtypes", [ElementRef, Renderer])
+], PreloadImage);
+export { PreloadImage };
 //# sourceMappingURL=preload-image.js.map

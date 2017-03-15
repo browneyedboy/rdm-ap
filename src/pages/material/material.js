@@ -9,27 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Lessondata } from '../../providers/lessondata';
+import { AboutuniPage } from '../aboutuni/aboutuni';
 /*
-  Generated class for the Material page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
+   ih surguuliud
 */
-export var MaterialPage = (function () {
-    function MaterialPage(navCtrl) {
+var MaterialPage = (function () {
+    function MaterialPage(navCtrl, tutsService) {
         this.navCtrl = navCtrl;
-        this.cond = "niigem";
+        this.tutsService = tutsService;
     }
     MaterialPage.prototype.ionViewDidLoad = function () {
         console.log('Hello MaterialPage Page');
+        // getuniversities
+        this.tutsService.getuniversities();
     };
-    MaterialPage = __decorate([
-        Component({
-            selector: 'page-material',
-            templateUrl: 'material.html'
-        }), 
-        __metadata('design:paramtypes', [NavController])
-    ], MaterialPage);
+    MaterialPage.prototype.aboutunivsity = function (uni) {
+        this.navCtrl.push(AboutuniPage, {
+            data: uni
+        });
+    };
     return MaterialPage;
 }());
+MaterialPage = __decorate([
+    Component({
+        selector: 'page-material',
+        templateUrl: 'material.html'
+    }),
+    __metadata("design:paramtypes", [NavController, Lessondata])
+], MaterialPage);
+export { MaterialPage };
 //# sourceMappingURL=material.js.map

@@ -1,6 +1,8 @@
+import { LoadingController } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+
 
 /*
   Generated class for the Lessondata provider.
@@ -19,8 +21,10 @@ export class Lessondata {
     banners: any =[];
     userregistered: any= 0;
     userloggedin: any=0;
+    profs: any =[];
+    testdata: any = [];
     
-  constructor(public http: Http) {
+  constructor(public http: Http, public loadingCtrl: LoadingController) {
     console.log('Hello Lessondata Provider');
   }
 
@@ -36,14 +40,21 @@ export class Lessondata {
 
   }
   loadtest(){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
 
   	this.http.get('http://erdem12.mongoliajourney.com/get/naturalsciencetest').map(
     res => res.json()).subscribe(data => {
         this.natural = data;
+        loading.dismiss();
         // console.log( JSON.stringify( data ) );
     },
     err => {
         console.log("Oops!");
+        loading.dismiss();
     });
 
     this.http.get('http://erdem12.mongoliajourney.com/get/socialsciencetest').map(
@@ -56,12 +67,20 @@ export class Lessondata {
   	
   }
   gettests(id){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+
     this.http.get('http://erdem12.mongoliajourney.com/get/gettests/'+id).map(
     res => res.json()).subscribe(data => {
         this.tests = data;
+        loading.dismiss();
     },
     err => {
         console.log("Oops!");
+        loading.dismiss();
     });
   }
   getlesson(id, typid){
@@ -121,6 +140,24 @@ export class Lessondata {
     err => {
         this.userloggedin = 0;
     });   
+  }
+  getprofessionals(sum){
+    this.http.get('http://erdem12.mongoliajourney.com/get/profbyscore/'+sum).map(
+    res => res.json()).subscribe(data => {
+        this.profs = data;
+    },
+    err => {
+        this.profs = 0;
+    }); 
+  }
+  getonlytest(id){
+    this.http.get('http://erdem12.mongoliajourney.com/get/onlytest/'+id).map(
+    res => res.json()).subscribe(data => {
+        this.testdata = data;
+    },
+    err => {
+        this.testdata = 0;
+    });  
   }
 
 }

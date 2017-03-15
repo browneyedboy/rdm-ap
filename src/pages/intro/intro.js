@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
+import { Lessondata } from '../../providers/lessondata';
 import { HomePage } from '../home/home';
 /*
   Generated class for the Intro page.
@@ -16,9 +17,10 @@ import { HomePage } from '../home/home';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-export var IntroPage = (function () {
-    function IntroPage(navCtrl) {
+var IntroPage = (function () {
+    function IntroPage(navCtrl, tutsService) {
         this.navCtrl = navCtrl;
+        this.tutsService = tutsService;
         this.slide_options = {
             pager: true
         };
@@ -26,13 +28,7 @@ export var IntroPage = (function () {
     }
     IntroPage.prototype.ionViewDidLoad = function () {
         console.log('Hello IntroPage Page');
-    };
-    IntroPage.prototype.skipIntro = function () {
-        // You can skip to main app
-        // this.nav.setRoot(TabsNavigationPage);
-        // Or you can skip to last slide (login/signup slide)
-        this.lastSlide = true;
-        this.slider.slideTo(this.slider.length());
+        this.tutsService.banner();
     };
     IntroPage.prototype.onSlideChanged = function () {
         // If it's the last slide, then hide the 'Skip' button on the header
@@ -42,17 +38,18 @@ export var IntroPage = (function () {
         this.navCtrl.push(HomePage);
         // this.navCtrl.setRoot(HomePage);
     };
-    __decorate([
-        ViewChild('slider'), 
-        __metadata('design:type', Slides)
-    ], IntroPage.prototype, "slider", void 0);
-    IntroPage = __decorate([
-        Component({
-            selector: 'page-intro',
-            templateUrl: 'intro.html'
-        }), 
-        __metadata('design:paramtypes', [NavController])
-    ], IntroPage);
     return IntroPage;
 }());
+__decorate([
+    ViewChild('slider'),
+    __metadata("design:type", Slides)
+], IntroPage.prototype, "slider", void 0);
+IntroPage = __decorate([
+    Component({
+        selector: 'page-intro',
+        templateUrl: 'intro.html'
+    }),
+    __metadata("design:paramtypes", [NavController, Lessondata])
+], IntroPage);
+export { IntroPage };
 //# sourceMappingURL=intro.js.map

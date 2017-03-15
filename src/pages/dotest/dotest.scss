@@ -1,4 +1,7 @@
 page-dotest {
+    .colorwhite{
+        color:#fff;
+    }
     .left{
         text-align: left;
     }
@@ -33,9 +36,16 @@ page-dotest {
       border-color: #fdbe43;
   }
     .swiper-container-horizontal > .swiper-pagination {
-        
+        top: 0 !important;
+        height: 35px;
+        display: flex;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
     }
-
+    .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
+    margin: 0 5px;
+    display: table;
+    }
     .radio-inner {
         background-color: transparent !important;
     }
@@ -80,6 +90,8 @@ page-dotest {
     ion-slide ion-col p {
         
     }
-    
+    .swiper-wrapper{
+        height: auto;
+    }
 
 }

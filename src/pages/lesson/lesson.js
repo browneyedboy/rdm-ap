@@ -8,7 +8,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { Lessondata } from '../../providers/lessondata';
 import { TopicPage } from '../topic/topic';
 /*
   Generated class for the Lesson page.
@@ -16,28 +17,38 @@ import { TopicPage } from '../topic/topic';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-export var LessonPage = (function () {
-    function LessonPage(navCtrl) {
+var LessonPage = (function () {
+    function LessonPage(navCtrl, params, tutsService) {
         this.navCtrl = navCtrl;
+        this.params = params;
+        this.tutsService = tutsService;
         this.show = false;
         this.show1 = false;
     }
     LessonPage.prototype.ionViewDidLoad = function () {
+        this.tutsService.getlesson(this.params.get('id'), this.params.get('typeid'));
+        this.season = this.params.get('id');
+        this.title = this.params.get('title');
         console.log('Hello LessonPage Page');
     };
-    LessonPage.prototype.showtopics = function () {
-        this.show = !this.show;
+    LessonPage.prototype.showtopics = function (id) {
+        this.show = id;
     };
-    LessonPage.prototype.gototopic = function () {
-        this.navCtrl.push(TopicPage);
+    LessonPage.prototype.gototopic = function (typeid, topic, title) {
+        this.navCtrl.push(TopicPage, {
+            typeid: typeid,
+            topic: topic,
+            title: title
+        });
     };
-    LessonPage = __decorate([
-        Component({
-            selector: 'page-lesson',
-            templateUrl: 'lesson.html'
-        }), 
-        __metadata('design:paramtypes', [NavController])
-    ], LessonPage);
     return LessonPage;
 }());
+LessonPage = __decorate([
+    Component({
+        selector: 'page-lesson',
+        templateUrl: 'lesson.html'
+    }),
+    __metadata("design:paramtypes", [NavController, NavParams, Lessondata])
+], LessonPage);
+export { LessonPage };
 //# sourceMappingURL=lesson.js.map

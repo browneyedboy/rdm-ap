@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component, Input, ElementRef, Renderer } from '@angular/core';
 import { isPresent } from 'ionic-angular/util/util';
-export var BackgroundImage = (function () {
+var BackgroundImage = (function () {
     function BackgroundImage(_elementRef, _renderer) {
         this._elementRef = _elementRef;
         this._renderer = _renderer;
@@ -40,22 +40,23 @@ export var BackgroundImage = (function () {
     BackgroundImage.prototype._loaded = function (isLoaded) {
         this._elementRef.nativeElement.classList[isLoaded ? 'add' : 'remove']('img-loaded');
     };
-    __decorate([
-        Input(), 
-        __metadata('design:type', String)
-    ], BackgroundImage.prototype, "class", void 0);
-    __decorate([
-        Input(), 
-        __metadata('design:type', String), 
-        __metadata('design:paramtypes', [String])
-    ], BackgroundImage.prototype, "src", null);
-    BackgroundImage = __decorate([
-        Component({
-            selector: 'background-image',
-            templateUrl: 'background-image.html'
-        }), 
-        __metadata('design:paramtypes', [ElementRef, Renderer])
-    ], BackgroundImage);
     return BackgroundImage;
 }());
+__decorate([
+    Input(),
+    __metadata("design:type", String)
+], BackgroundImage.prototype, "class", void 0);
+__decorate([
+    Input(),
+    __metadata("design:type", String),
+    __metadata("design:paramtypes", [String])
+], BackgroundImage.prototype, "src", null);
+BackgroundImage = __decorate([
+    Component({
+        selector: 'background-image',
+        templateUrl: 'background-image.html'
+    }),
+    __metadata("design:paramtypes", [ElementRef, Renderer])
+], BackgroundImage);
+export { BackgroundImage };
 //# sourceMappingURL=background-image.js.map

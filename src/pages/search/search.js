@@ -12,7 +12,7 @@ import { NavController, LoadingController } from 'ionic-angular';
 import 'rxjs/Rx';
 import { ListingModel } from './search.model';
 import { ListingService } from './search.service';
-export var SearchPage = (function () {
+var SearchPage = (function () {
     function SearchPage(nav, searchService, loadingCtrl) {
         this.nav = nav;
         this.searchService = searchService;
@@ -35,13 +35,16 @@ export var SearchPage = (function () {
     };
     SearchPage.prototype.goToFeed = function (category) {
     };
-    SearchPage = __decorate([
-        Component({
-            selector: 'search-page',
-            templateUrl: 'search.html',
-        }), 
-        __metadata('design:paramtypes', [NavController, ListingService, LoadingController])
-    ], SearchPage);
     return SearchPage;
 }());
+SearchPage = __decorate([
+    Component({
+        selector: 'search-page',
+        templateUrl: 'search.html',
+    }),
+    __metadata("design:paramtypes", [NavController,
+        ListingService,
+        LoadingController])
+], SearchPage);
+export { SearchPage };
 //# sourceMappingURL=search.js.map

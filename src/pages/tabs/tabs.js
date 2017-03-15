@@ -9,33 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { FavoritePage } from '../favorite/favorite';
 import { TutorialPage } from '../tutorial/tutorial';
 import { SearchPage } from '../search/search';
 import { TestPage } from '../test/test';
 import { MypointPage } from '../mypoint/mypoint';
+import { RealsearchPage } from '../realsearch/realsearch';
 /*
   Generated class for the Tabs page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-export var TabsPage = (function () {
+var TabsPage = (function () {
     function TabsPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.tab1Root = FavoritePage;
+        this.tab1Root = SearchPage;
         this.tab2Root = TutorialPage;
-        this.tab3Root = SearchPage;
+        this.tab3Root = RealsearchPage;
         this.tab4Root = TestPage;
         this.tab5Root = MypointPage;
     }
-    TabsPage = __decorate([
-        Component({
-            selector: 'page-tabs',
-            templateUrl: 'tabs.html'
-        }), 
-        __metadata('design:paramtypes', [NavController])
-    ], TabsPage);
     return TabsPage;
 }());
+TabsPage = __decorate([
+    Component({
+        selector: 'page-tabs',
+        templateUrl: 'tabs.html'
+    }),
+    __metadata("design:paramtypes", [NavController])
+], TabsPage);
+export { TabsPage };
 //# sourceMappingURL=tabs.js.map

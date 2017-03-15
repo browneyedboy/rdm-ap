@@ -12,7 +12,9 @@ export class TestPage {
 	cond: string = "niigem";
     year: any = 0;
   public show: any; 
-  constructor(public navCtrl: NavController,  public tutsService: Lessondata) {}
+  constructor(public navCtrl: NavController, public tutsService: Lessondata) {
+    
+  }
 
   ionViewDidLoad() {
     this.tutsService.loadtest();

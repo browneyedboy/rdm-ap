@@ -42,11 +42,11 @@ export class MyApp {
             }).then(() => {
 
                 // test offline datas
-                // db.executeSql("CREATE TABLE IF NOT EXISTS mytest (id INTEGER PRIMARY KEY AUTOINCREMENT, test_id INTEGER, test_score INTEGER, userid INTEGER)", {}).then((data) => {
-                //     console.log("TABLE CREATED: ", data);
-                // }, (error) => {
-                //     console.error("Unable to execute sql", error);
-                // });
+                db.executeSql("CREATE TABLE IF NOT EXISTS mytest1 (id INTEGER PRIMARY KEY AUTOINCREMENT, test_id INTEGER, test_score INTEGER, title TEXT, variant TEXT, userid INTEGER)", {}).then((data) => {
+                    console.log("MY test TABLE CREATED: ", data);
+                }, (error) => {
+                    console.error("Unable to execute sql", error);
+                });
 
                 // test results 
                 // db.executeSql("CREATE TABLE IF NOT EXISTS results (id INTEGER PRIMARY KEY AUTOINCREMENT, test_id INTEGER, test_item_id INTEGER, score INTEGER)", {}).then((data) => {

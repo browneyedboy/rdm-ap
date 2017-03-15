@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { NavController, Platform } from 'ionic-angular';
+import { SQLite } from "ionic-native";
 /*
   Generated class for the Mypoint page.
 
@@ -12,11 +12,36 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'mypoint.html'
 })
 export class MypointPage {
+	public database: SQLite;
+	public items: any = [];
+  constructor(public navCtrl: NavController, public platform: Platform) {
 
-  constructor(public navCtrl: NavController) {}
+  }
 
   ionViewDidLoad() {
     console.log('Hello MypointPage Page');
+    this.platform.ready().then(() => {
+    	this.database = new SQLite();
+     	this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
+	     	console.log('database is opened');
+
+	    	this.database.executeSql("SELECT * FROM mytest1", []).then((data) => {
+			      	console.log(data);
+			      	
+			      	if(data.rows.length > 0) {
+		                for(var i = 0; i < data.rows.length; i++) {
+		                    this.items.push({title: data.rows.item(i).title, score: data.rows.item(i).test_score, variant: data.rows.item(i).variant, year: data.rows.item(i).year});
+		                }
+		          	}
+
+			}, (error) => {
+			      console.log("ERROR: " + error);
+			});
+		}, (error) => {
+            console.log("ERROR: ", error);
+        });
+
+	});
   }
 
 }

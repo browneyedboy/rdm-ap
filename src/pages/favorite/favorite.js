@@ -15,20 +15,21 @@ import { NavController } from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-export var FavoritePage = (function () {
+var FavoritePage = (function () {
     function FavoritePage(navCtrl) {
         this.navCtrl = navCtrl;
     }
     FavoritePage.prototype.ionViewDidLoad = function () {
         console.log('Hello FavoritePage Page');
     };
-    FavoritePage = __decorate([
-        Component({
-            selector: 'page-favorite',
-            templateUrl: 'favorite.html'
-        }), 
-        __metadata('design:paramtypes', [NavController])
-    ], FavoritePage);
     return FavoritePage;
 }());
+FavoritePage = __decorate([
+    Component({
+        selector: 'page-favorite',
+        templateUrl: 'favorite.html'
+    }),
+    __metadata("design:paramtypes", [NavController])
+], FavoritePage);
+export { FavoritePage };
 //# sourceMappingURL=favorite.js.map

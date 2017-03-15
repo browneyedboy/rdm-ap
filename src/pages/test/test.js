@@ -10,34 +10,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { StarttestPage } from '../starttest/starttest';
-/*
-  Generated class for the Test page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-export var TestPage = (function () {
-    function TestPage(navCtrl) {
+import { Lessondata } from '../../providers/lessondata';
+var TestPage = (function () {
+    function TestPage(navCtrl, tutsService) {
         this.navCtrl = navCtrl;
+        this.tutsService = tutsService;
         this.cond = "niigem";
-        this.show = false;
+        this.year = 0;
     }
     TestPage.prototype.ionViewDidLoad = function () {
-        console.log('Hello TestPage Page');
+        this.tutsService.loadtest();
     };
-    TestPage.prototype.showtests = function () {
-        this.show = !this.show;
+    TestPage.prototype.showtests = function (id) {
+        this.show = id;
     };
-    TestPage.prototype.gotostarttest = function () {
-        this.navCtrl.push(StarttestPage);
+    TestPage.prototype.gotostarttest = function (test) {
+        this.navCtrl.push(StarttestPage, {
+            test: test
+        });
     };
-    TestPage = __decorate([
-        Component({
-            selector: 'page-test',
-            templateUrl: 'test.html'
-        }), 
-        __metadata('design:paramtypes', [NavController])
-    ], TestPage);
     return TestPage;
 }());
+TestPage = __decorate([
+    Component({
+        selector: 'page-test',
+        templateUrl: 'test.html'
+    }),
+    __metadata("design:paramtypes", [NavController, Lessondata])
+], TestPage);
+export { TestPage };
 //# sourceMappingURL=test.js.map

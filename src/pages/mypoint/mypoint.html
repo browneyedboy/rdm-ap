@@ -39,44 +39,20 @@
   </ion-grid>
 </ion-card>
 
-<ion-card >
+<ion-card *ngFor="let item of items">
   <ion-grid>
     <ion-row>
-      <ion-col  width-33>Математик(2010)</ion-col>
-      <ion-col  width-33>Вариант А</ion-col>
+      <ion-col  width-33>{{item.title}}(item.year)</ion-col>
+      <ion-col  width-33>Вариант {{item.variant}}</ion-col>
       <ion-col  width-33>
-          <span><span color="primary">700</span>/800</span>
+          <span><span color="primary">{{item.score}}</span></span>
           <ion-icon name="ios-arrow-forward" color="primary"></ion-icon>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-card>
 
-<ion-card>
-  <ion-grid>
-    <ion-row>
-      <ion-col   width-33>Монгол хэл(2010)</ion-col>
-      <ion-col   width-33>Вариант Б</ion-col>
-      <ion-col   width-33>
-      <span><span color="primary">700</span>/800</span>
-      <ion-icon name="ios-arrow-forward-outline" color="primary"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-card>
 
-<ion-card>
-  <ion-grid>
-    <ion-row>
-      <ion-col  width-33>Математик(2010)</ion-col>
-      <ion-col  width-33>Вариант В</ion-col>
-      <ion-col  width-33>
-      <span><span color="primary">700</span>/800</span>
-      <ion-icon name="ios-arrow-forward-outline" color="primary"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-card>
 
 
 </ion-content>

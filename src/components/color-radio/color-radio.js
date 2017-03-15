@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Directive, ElementRef, Input, Renderer } from '@angular/core';
-export var ColorRadio = (function () {
+var ColorRadio = (function () {
     function ColorRadio(el, renderer) {
         this.el = el;
         this.renderer = renderer;
@@ -21,16 +21,17 @@ export var ColorRadio = (function () {
         console.log(this.color);
         this.setColor(this.color);
     };
-    __decorate([
-        Input('color-radio'), 
-        __metadata('design:type', String)
-    ], ColorRadio.prototype, "color", void 0);
-    ColorRadio = __decorate([
-        Directive({
-            selector: '[color-radio]'
-        }), 
-        __metadata('design:paramtypes', [ElementRef, Renderer])
-    ], ColorRadio);
     return ColorRadio;
 }());
+__decorate([
+    Input('color-radio'),
+    __metadata("design:type", String)
+], ColorRadio.prototype, "color", void 0);
+ColorRadio = __decorate([
+    Directive({
+        selector: '[color-radio]'
+    }),
+    __metadata("design:paramtypes", [ElementRef, Renderer])
+], ColorRadio);
+export { ColorRadio };
 //# sourceMappingURL=color-radio.js.map

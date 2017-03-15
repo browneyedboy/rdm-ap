@@ -39,8 +39,8 @@
               <ion-card-content>
                 <ion-grid>
                   <ion-row>
-                    <ion-col class="time" width-20>16<br>минут</ion-col>
-                    <ion-col class="title" width-33>{{tuts.title}}</ion-col>
+                    <!-- <ion-col class="time" width-20>16<br>минут</ion-col> -->
+                    <ion-col class="title" width-50>{{tuts.title}}</ion-col>
                     <ion-col class="right" width-50>
                         <button (click)="showtests(tuts.id)" class="choose" color="dark" ion-button clear>Шалгалт<br>сонгох <ion-icon color="primary" name="ios-arrow-down" item-right></ion-icon></button>
                     </ion-col>
@@ -60,7 +60,7 @@
                                 </ion-col>
                             </ion-row>
                             <ion-row>
-                                <ion-col  *ngFor="let test of year.test" width-33>
+                                <ion-col  *ngFor="let test of year.test" width-25>
                                     <button  ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
                                 </ion-col>
                             </ion-row>
@@ -82,8 +82,8 @@
               <ion-card-content>
                 <ion-grid>
                   <ion-row>
-                    <ion-col class="time" width-20>16<br>минут</ion-col>
-                    <ion-col class="title" width-33>{{tuts.title}}</ion-col>
+                    <!-- <ion-col class="time" width-20>16<br>минут</ion-col> -->
+                    <ion-col class="title" width-50>{{tuts.title}}</ion-col>
                     <ion-col class="right" width-50>
                         <button (click)="showtests(tuts.id)" class="choose" color="dark" ion-button clear>Шалгалт<br>сонгох <ion-icon color="primary" name="ios-arrow-down" item-right></ion-icon></button>
                     </ion-col>
@@ -103,7 +103,7 @@
                                 </ion-col>
                             </ion-row>
                             <ion-row>
-                                <ion-col  *ngFor="let test of year.test" width-33>
+                                <ion-col  *ngFor="let test of year.test" width-25>
                                     <button  ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
                                 </ion-col>
                             </ion-row>

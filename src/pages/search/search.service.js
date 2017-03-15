@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Injectable } from "@angular/core";
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-export var ListingService = (function () {
+var ListingService = (function () {
     function ListingService(http) {
         this.http = http;
     }
@@ -24,10 +24,11 @@ export var ListingService = (function () {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    ListingService = __decorate([
-        Injectable(), 
-        __metadata('design:paramtypes', [Http])
-    ], ListingService);
     return ListingService;
 }());
+ListingService = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [Http])
+], ListingService);
+export { ListingService };
 //# sourceMappingURL=search.service.js.map

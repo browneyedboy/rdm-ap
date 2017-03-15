@@ -23,21 +23,19 @@
 <ion-grid>
     <ion-row>
       <ion-col width-33 class="variant">
-        <span>A</span>
-        <span>Вариант: {{test.variant}}</span>
-        <span>{{test.year}}: он</span>
-        <span>Оноо: {{test.score}}</span>
+        <span>Вариант: {{tutsService.testdata['variant']}}</span>
+        <span>{{tutsService.testdata['year']}}: он</span>
+        <!-- <span>Оноо: </span> -->
       </ion-col>
       <ion-col width-33 class="asuult">
           <p>
             Асуулт<br>
-            1
           </p>
 
       </ion-col>
       <ion-col width-33>
         <h1 class="minut">
-          <timer #timer timeInSeconds="60"></timer>
+          <timer #timer timeInSeconds="{{ tutsService.testdata['time'] ? tutsService.testdata['time'] : '7200' }}"></timer>
         </h1>
       </ion-col>
     </ion-row>
@@ -90,6 +88,10 @@
         </ion-card>
         
       </ion-list>
+  </ion-slide>
+  <ion-slide>
+    <br><br>
+    <button class="colorwhite" (click)="gotoresult(tutsService.testdata['title'], tutsService.testdata['variant'])" ion-button>Шалгалтыг дуусгах</button>
   </ion-slide>
 
 

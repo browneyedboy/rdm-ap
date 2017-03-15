@@ -1,11 +1,13 @@
-export var ListingModel = (function () {
+var ListingModel = (function () {
     function ListingModel() {
     }
     return ListingModel;
 }());
-export var ListingItemModel = (function () {
+export { ListingModel };
+var ListingItemModel = (function () {
     function ListingItemModel() {
     }
     return ListingItemModel;
 }());
+export { ListingItemModel };
 //# sourceMappingURL=search.model.js.map

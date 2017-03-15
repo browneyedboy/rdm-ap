@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { Lessondata } from '../../providers/lessondata';
 
 /*
   Generated class for the ResultPage page.
@@ -12,11 +13,28 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'result-page.html'
 })
 export class ResultPage {
-
-  constructor(public navCtrl: NavController) {}
+	onoo: any;
+  constructor(public navCtrl: NavController, public params: NavParams, public tutsService: Lessondata) {}
 
   ionViewDidLoad() {
     console.log('Hello ResultPagePage Page');
+    
+    var sum = 0;
+    var data = this.params.get('data');
+    console.log(data);
+    for (var i in data) {
+    	sum += parseFloat(data[i])
+    }
+    console.log(sum);
+    this.onoo = sum;
+    this.tutsService.getprofessionals(sum);
+
   }
+  // function(array, valueField){
+  //   var sum = 0;
+  //   for(var i=0, len=array.length; i<len; i++)
+  //       sum += parseFloat(array[i][valueField])
+  //   return sum;
+  // }
 
 }

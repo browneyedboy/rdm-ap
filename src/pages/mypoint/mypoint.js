@@ -8,27 +8,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
+import { SQLite } from "ionic-native";
 /*
   Generated class for the Mypoint page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-export var MypointPage = (function () {
-    function MypointPage(navCtrl) {
+var MypointPage = (function () {
+    function MypointPage(navCtrl, platform) {
         this.navCtrl = navCtrl;
+        this.platform = platform;
+        this.items = [];
     }
     MypointPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
         console.log('Hello MypointPage Page');
+        this.platform.ready().then(function () {
+            _this.database = new SQLite();
+            _this.database.openDatabase({ name: "data.db", location: "default" }).then(function () {
+                console.log('database is opened');
+                _this.database.executeSql("SELECT * FROM mytest", []).then(function (data) {
+                    console.log(data);
+                    _this.items = data;
+                }, function (error) {
+                    console.log("ERROR: " + error);
+                });
+            }, function (error) {
+                console.log("ERROR: ", error);
+            });
+        });
     };
-    MypointPage = __decorate([
-        Component({
-            selector: 'page-mypoint',
-            templateUrl: 'mypoint.html'
-        }), 
-        __metadata('design:paramtypes', [NavController])
-    ], MypointPage);
     return MypointPage;
 }());
+MypointPage = __decorate([
+    Component({
+        selector: 'page-mypoint',
+        templateUrl: 'mypoint.html'
+    }),
+    __metadata("design:paramtypes", [NavController, Platform])
+], MypointPage);
+export { MypointPage };
 //# sourceMappingURL=mypoint.js.map
