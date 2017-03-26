@@ -14,6 +14,7 @@ import { MypointPage } from '../pages/mypoint/mypoint';
 import { LessonPage } from '../pages/lesson/lesson';
 import { ProfilePage } from '../pages/profile/profile';
 import { RealsearchPage } from '../pages/realsearch/realsearch';
+import { ProfessionPage } from '../pages/profession/profession';
 
 import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
@@ -59,7 +60,8 @@ import { Lessondata } from '../providers/lessondata';
     TimerComponent,
     ResultPage,
     ForgotpassPage,
-    AboutuniPage
+    AboutuniPage,
+    ProfessionPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -91,7 +93,8 @@ import { Lessondata } from '../providers/lessondata';
     TimerComponent,
     ResultPage,
     ForgotpassPage,
-    AboutuniPage
+    AboutuniPage,
+    ProfessionPage
   ],
   providers: [ListingService, Lessondata],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

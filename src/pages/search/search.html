@@ -25,11 +25,7 @@
       </ion-col>
     </ion-row>
   </background-image>
-  
-  <ion-scroll scrollX="true" class="horizontal-categories">
-    
-  </ion-scroll>
-  <h4 class="categories-title">Хичээлүүд</h4>
+  <h4 class="categories-title"></h4>
   <ion-row class="grid-categories">
     <ion-col width-50 class="category-item" *ngFor="let category of search.categories">
       <background-image class="category-heading" [src]="category.image" (click)="goToFeed(category)">

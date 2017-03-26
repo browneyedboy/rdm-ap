@@ -23,19 +23,27 @@ export class Lessondata {
     userloggedin: any=0;
     profs: any =[];
     testdata: any = [];
+    alltutors: any = [];
     
   constructor(public http: Http, public loadingCtrl: LoadingController) {
     console.log('Hello Lessondata Provider');
   }
 
   load(){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
 
   	this.http.get('http://erdem12.mongoliajourney.com/get/naturalscience').map(
     res => res.json()).subscribe(data => {
         this.natural = data;
+        loading.dismiss();
     },
     err => {
         console.log("Oops!");
+        loading.dismiss();
     });
 
   }
@@ -60,11 +68,31 @@ export class Lessondata {
     this.http.get('http://erdem12.mongoliajourney.com/get/socialsciencetest').map(
     res => res.json()).subscribe(data => {
         this.social = data;
+        loading.dismiss();
+    },
+    err => {
+        console.log("Oops!");
+        loading.dismiss();
+    }); 
+  	
+  }
+  alltests(){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+
+    this.http.get('http://erdem12.mongoliajourney.com/get/alltutorial').map(
+    res => res.json()).subscribe(data => {
+        this.alltutors = data;
+        loading.dismiss();
+        // console.log( JSON.stringify( data ) );
     },
     err => {
         console.log("Oops!");
     }); 
-  	
+        
   }
   gettests(id){
     let loading = this.loadingCtrl.create({
@@ -84,42 +112,74 @@ export class Lessondata {
     });
   }
   getlesson(id, typid){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+
     this.http.get('http://erdem12.mongoliajourney.com/get/getlesson/'+id+'/'+typid).map(
     res => res.json()).subscribe(data => {
         this.lessons = data;
+        loading.dismiss();
     },
     err => {
         console.log("Oops!");
+        loading.dismiss();
     });
   }
 
   gettopicone(typeid, topicid){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+
     this.http.get('http://erdem12.mongoliajourney.com/get/gettopicone/'+typeid+'/'+topicid).map(
     res => res.json()).subscribe(data => {
         this.topic = data;
+        loading.dismiss();
     },
     err => {
         this.topic = 0;
+        loading.dismiss();
     });
   }
 
   getuniversities(){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+    
     this.http.get('http://erdem12.mongoliajourney.com/get/getuniversities').map(
         res => res.json()).subscribe(data => {
         this.universities = data;
+        loading.dismiss();
     },
     err => {
         this.topic = 0;
+        loading.dismiss();
     });
   }
 
   banner(){ 
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+
     this.http.get('http://erdem12.mongoliajourney.com/get/banners').map(
         res => res.json()).subscribe(data => {
         this.banners = data;
+        loading.dismiss();
     },
     err => {
         this.banners = 0;
+        loading.dismiss();
     });
   }
   registeruser(phone, email){
@@ -142,21 +202,37 @@ export class Lessondata {
     });   
   }
   getprofessionals(sum){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+
     this.http.get('http://erdem12.mongoliajourney.com/get/profbyscore/'+sum).map(
     res => res.json()).subscribe(data => {
         this.profs = data;
+        loading.dismiss();
     },
     err => {
         this.profs = 0;
+        loading.dismiss();
     }); 
   }
   getonlytest(id){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+
     this.http.get('http://erdem12.mongoliajourney.com/get/onlytest/'+id).map(
     res => res.json()).subscribe(data => {
         this.testdata = data;
+        loading.dismiss();
     },
     err => {
         this.testdata = 0;
+        loading.dismiss();
     });  
   }
 

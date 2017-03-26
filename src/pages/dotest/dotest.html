@@ -25,7 +25,7 @@
       <ion-col width-33 class="variant">
         <span>Вариант: {{tutsService.testdata['variant']}}</span>
         <span>{{tutsService.testdata['year']}}: он</span>
-        <!-- <span>Оноо: </span> -->
+        <button class="outbtn" color="primary" (click)="outexam()" ion-button clear>Гарах</button>
       </ion-col>
       <ion-col width-33 class="asuult">
           <p>
@@ -54,35 +54,35 @@
       <ion-list radio-group [(ngModel)]="colors[i]" (ionChange)="colorchanged(i)">
         <ion-card *ngIf(answers(test.content).a)>
           <ion-item>
-            <ion-label>{{answers(test.content).a}}</ion-label>
+            <ion-label>A: <div [innerHTML]="answers(test.content).a"></div></ion-label>
             <ion-radio  color="a" value="a" (click)="selectanswer('A', test.content)" ></ion-radio >
           </ion-item>
         </ion-card>
         
         <ion-card  *ngIf(answers(test.content).b)>
           <ion-item>
-            <ion-label>{{answers(test.content).b}}</ion-label>
+            <ion-label>B: <div [innerHTML]="answers(test.content).b"></div></ion-label>
             <ion-radio  color="b" value="b" (click)="selectanswer('B', test.content)" ></ion-radio >
           </ion-item>
         </ion-card>
 
         <ion-card  *ngIf(answers(test.content).c)>
           <ion-item>
-            <ion-label>{{answers(test.content).c}}</ion-label>
+            <ion-label>C: <div [innerHTML]="answers(test.content).c"></div></ion-label>
             <ion-radio  color="c" value="c" (click)="selectanswer('C', test.content)"></ion-radio >
           </ion-item>
         </ion-card>
 
         <ion-card  *ngIf(answers(test.content).d)>
           <ion-item>
-            <ion-label>{{answers(test.content).d}}</ion-label>
+            <ion-label>D: <div [innerHTML]="answers(test.content).d"></div></ion-label>
             <ion-radio  color="d" value="d" (click)="selectanswer('D', test.content)" ></ion-radio >
           </ion-item>
         </ion-card>
 
         <ion-card  *ngIf(answers(test.content).e)>
           <ion-item>
-            <ion-label>{{answers(test.content).e}}</ion-label>
+            <ion-label>E: <div [innerHTML]="answers(test.content).e"></div></ion-label>
             <ion-radio  color="e" value="e" (click)="selectanswer('E', test.content)" ></ion-radio >
           </ion-item>
         </ion-card>
@@ -97,7 +97,7 @@
 
 
 </ion-slides>
-<ion-grid>
+<ion-grid class="prevnext">
     
     <ion-row>
         <ion-col width-50 class="left nxtprv">

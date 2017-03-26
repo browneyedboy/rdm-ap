@@ -1,18 +1,20 @@
-<!--
-  Generated template for the Profession page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Profession</ion-title>
+    <ion-buttons end>
+	      <button ion-button>
+	        <img src="assets/logo-erdem12.png">
+	      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+	<ion-list no-lines>
+	    <ion-item>
+            <ion-card *ngFor="let item of tutsService.profs">
+              <button ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>{{ item.title }} <small>{{item.school}}</small></button>
+            </ion-card>
+	    </ion-item>
+   </ion-list>
 </ion-content>

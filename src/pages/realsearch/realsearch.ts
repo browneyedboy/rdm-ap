@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Lessondata } from '../../providers/lessondata';
 
-/*
-  Generated class for the Realsearch page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-realsearch',
   templateUrl: 'realsearch.html'
@@ -15,22 +11,22 @@ export class RealsearchPage {
 
 	searchQuery: string = '';
   	items: string[];
-  	constructor(public navCtrl: NavController) {
-	  	this.initializeItems();
+  	constructor(public navCtrl: NavController, public tutsService: Lessondata) {
+	  	// this.initializeItems();
+      this.tutsService.alltests();
 	}
  
 
-  initializeItems() {
-    this.items = [
-      'Amsterdam',
-      'Bogota'
-    ];
-  }
+  // initializeItems() {
+      // this.items = this.tutsService.alltutors;
+      // console.log(this.items);
+  // }
 
-  getItems(ev: any) {
+  getItems(ev: any, data) {
     // Reset items back to all of the items
-    this.initializeItems();
-
+    // this.initializeItems();
+    
+    this.items = data;
     // set val to the value of the searchbar
     let val = ev.target.value;
 
@@ -40,5 +36,8 @@ export class RealsearchPage {
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+  clicktutors(id){
+    
   }
 }

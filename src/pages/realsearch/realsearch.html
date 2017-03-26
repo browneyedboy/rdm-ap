@@ -21,10 +21,10 @@
 
 
 <ion-content>
-	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+	<ion-searchbar (ionInput)="getItems($event, tutsService.alltutors)" value="хайх"></ion-searchbar>
 	<ion-list>
-	  <ion-item *ngFor="let item of items">
-	    {{ item }}
+	  <ion-item *ngFor="let item of tutsService.alltutors" (click) = "clicktutors(item.id)">
+	    {{ item.title }}
 	  </ion-item>
 	</ion-list>
 </ion-content>

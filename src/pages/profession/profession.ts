@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { Lessondata } from '../../providers/lessondata';
 /*
   Generated class for the Profession page.
 
@@ -13,10 +13,11 @@ import { NavController } from 'ionic-angular';
 })
 export class ProfessionPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public tutsService: Lessondata) {}
 
   ionViewDidLoad() {
     console.log('Hello ProfessionPage Page');
+    this.tutsService.getprofessionals(1000);
   }
 
 }

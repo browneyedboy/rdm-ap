@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Slides, ViewController, App } from 'ionic-angular';
+import { Component, ViewChild} from '@angular/core';
+import { NavController, NavParams, Slides, ViewController, App, AlertController } from 'ionic-angular';
 import { SQLite } from "ionic-native";
 import { Lessondata } from '../../providers/lessondata';
 import { TimerComponent } from './timer';
@@ -24,18 +24,17 @@ export class DotestPage {
 	public testid: number;
 	
 	@ViewChild(TimerComponent) timer: TimerComponent;
-	// @ViewChild('erdemtab') tabRef: Tabs;
+	// @ViewChild('content') nav: NavController
+ //   public rootPage = DotestPage;
+   // @ViewChild('supertab') tabRef: Tabs;
+
+
 	constructor(public navCtrl: NavController, public params: NavParams, public tutsService: Lessondata, 
-		public viewCtrl: ViewController, public appCtrl: App) {
+		public viewCtrl: ViewController, public appCtrl: App, private alertCtrl: AlertController
+		) {
 		this.testid = this.params.get('id');
 		this.tutsService.gettests(this.testid);
 		this.tutsService.getonlytest(this.testid);
-		
-		
-		
-		// this.tabBarElement = document.querySelector('#tabs ion-tabbar-section');
-		// this.tabBarElement.style.display = 'none';
-
 
 		// this.platform.ready().then(() => {
 			
@@ -45,16 +44,45 @@ export class DotestPage {
 	
 	ionViewDidLoad() {
 		console.log('Hello DotestPage Page');
+		this.tabBarElement = document.querySelector('.tabbar');
+
 		this.timer.startTimer();
-
+		
+		
+		this.tabBarElement.style.display = 'none';
 	}
-
+	ionViewWillLeave(){
+		this.tabBarElement.style.display = 'flex';	
+	}
+	outexam(){
+		let alert = this.alertCtrl.create({
+		    title: 'Шалгалтаас гарах!',
+		    message: 'Итгэлтэй байна уу?',
+		    buttons: [
+		      {
+		        text: 'Болих',
+		        role: 'cancel',
+		        handler: () => {
+		          console.log('Cancel clicked');
+		        }
+		      },
+		      {
+		        text: 'Гарах',
+		        handler: () => {
+		          this.navCtrl.pop();
+		        }
+		      }
+		    ]
+		  });
+		  alert.present();
+	}
 	jsonparse(json){
 		var parsed = JSON.parse(json);
 		return parsed.question;
 	}
 	answers(json){
 		var parsed = JSON.parse(json);
+
 		return (parsed.answers);
 	}
 	slideOptions = {
@@ -89,17 +117,14 @@ export class DotestPage {
 		var parsed = JSON.parse(correct);
 		
 		if(answer == parsed.correctanswer){
-			console.log( parsed.onoo.match(/\d/g) );
+			// console.log( parsed.onoo.match(/\d/g) );
 			var onoo = parsed.onoo.match(/\d/g);
-			if(onoo == null) {
-				onoo = 0;
-			}
-
-			// console.log(parseInt(onoo));
 			
 			this.arr[this.answerkey] = parseInt(onoo);
-
-			// console.log(this.arr);
+		}else{
+			this.arr[this.answerkey] = 0;
+		}
+			console.log(this.arr);
 
 			// console.log(anarray.length);
 			// this.database = new SQLite();
@@ -122,7 +147,7 @@ export class DotestPage {
 	  //       });
 		    	
 			
-		}
+		
 	}
 
 	gotoresult(title, variant) {

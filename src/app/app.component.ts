@@ -6,6 +6,8 @@ import { ProfilePage } from '../pages/profile/profile';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { TestPage } from '../pages/test/test';
 import { MaterialPage } from '../pages/material/material';
+import { ProfessionPage } from '../pages/profession/profession';
+
 
 // import { HomePage } from '../pages/home/home'; // login ordog home
 
@@ -98,9 +100,13 @@ export class MyApp {
   openmaterial(){
     this.nav.push(MaterialPage);
   }
-    exitApp(){
-         this.platform.exitApp();
-      }
+  openprof(){
+    this.nav.push(ProfessionPage);
+  }
+
+  exitApp(){
+       this.platform.exitApp();
+    }
 
 }
 

@@ -1,4 +1,29 @@
 page-dotest {
+    ion-label{
+        display: flex;
+        align-items: center;
+        div{
+            margin-left: 10px;
+        }
+    }
+    ion-header{
+        .back-button{
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+    .prevnext{
+        position: fixed;
+        bottom: 0;
+        z-index: 9999;
+        background: #fff;
+        border-top: 1px solid #eee;
+    }
+    .outbtn{
+        display: flex;
+        background-color: transparent;
+    }
     .colorwhite{
         color:#fff;
     }
@@ -21,8 +46,12 @@ page-dotest {
     line-height: 15px;
     font-size: 12px;    
   }
+  .minut{
+    margin-top: 0 !important;
+  }
   .variant span{
     display: block;
+    padding:10px 10px 0;
   }
   h1 {
     margin-top: 1rem!important;
@@ -60,6 +89,7 @@ page-dotest {
     .swiper-container{
         height: auto;
     }
+
     ion-slides {
         height: auto;
     }
@@ -92,6 +122,17 @@ page-dotest {
     }
     .swiper-wrapper{
         height: auto;
+    }
+    .swiper-slide{
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: flex-start;
+        align-items: flex-start;
+    }
+    .slide-zoom{
+        margin-top: 20px;
     }
 
 }
