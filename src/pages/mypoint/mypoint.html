@@ -42,7 +42,7 @@
 <ion-card *ngFor="let item of items">
   <ion-grid>
     <ion-row>
-      <ion-col  width-33>{{item.title}}(item.year)</ion-col>
+      <ion-col  width-33>{{item.title}}({{item.year}})</ion-col>
       <ion-col  width-33>Вариант {{item.variant}}</ion-col>
       <ion-col  width-33>
           <span><span color="primary">{{item.score}}</span></span>

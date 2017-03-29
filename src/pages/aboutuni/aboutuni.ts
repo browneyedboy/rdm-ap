@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { ProfessionPage } from '../profession/profession';
 /*
   Generated class for the Aboutuni page.
 
@@ -24,5 +24,7 @@ export class AboutuniPage {
     	this.title = data.title;
     	this.description = data.description;
   }
-
+  goprof(){
+    this.navCtrl.push(ProfessionPage);
+  }
 }

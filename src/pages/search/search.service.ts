@@ -11,7 +11,7 @@ export class ListingService {
   constructor(public http: Http) {}
 
   getData(): Promise<ListingModel> {
-    return this.http.get('./assets/json/listing.json')
+    return this.http.get('http://erdem12.mongoliajourney.com/get/alltutorial')
      .toPromise()
      .then(response => response.json() as ListingModel)
      .catch(this.handleError);

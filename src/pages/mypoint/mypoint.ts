@@ -25,7 +25,7 @@ export class MypointPage {
      	this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
 	     	console.log('database is opened');
 
-	    	this.database.executeSql("SELECT * FROM mytest1", []).then((data) => {
+	    	this.database.executeSql("SELECT * FROM mytest3", []).then((data) => {
 			      	console.log(data);
 			      	
 			      	if(data.rows.length > 0) {

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, Slides } from 'ionic-angular';
+import { NavController, Slides, Platform } from 'ionic-angular';
 import { Lessondata } from '../../providers/lessondata';
 import { HomePage } from '../home/home';
 /*
@@ -8,10 +8,14 @@ import { HomePage } from '../home/home';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+declare var window: any;
+declare var cordova: any;
+
 @Component({
   selector: 'page-intro',
   templateUrl: 'intro.html'
 })
+
 export class IntroPage {
 
   slide_options = {
@@ -21,7 +25,7 @@ export class IntroPage {
 
   @ViewChild('slider') slider: Slides;
 
-  constructor(public navCtrl: NavController, public tutsService: Lessondata) {}
+  constructor(public navCtrl: NavController, public tutsService: Lessondata, private platform: Platform) {}
 
   ionViewDidLoad() {
     console.log('Hello IntroPage Page');
@@ -36,5 +40,10 @@ export class IntroPage {
   login(){
   	this.navCtrl.push(HomePage);
   	// this.navCtrl.setRoot(HomePage);
+  }
+  gotolink(url){
+    this.platform.ready().then(() => {
+            cordova.InAppBrowser.open(url, "_system", "location=true");
+        });
   }
 }

@@ -44,7 +44,7 @@ page-intro {
 
 			.intro-image-row
 			{
-				margin: 90px 20px 20px;
+				margin: 65px 20px 20px;
 			}
 
 			.main-title
@@ -134,5 +134,8 @@ page-intro {
 	.lastimage{
 		margin-left: 22%;
 		padding-bottom: 0 !important;
+	}
+	button:last-child{
+		border-radius: 6px !important;
 	}
 }

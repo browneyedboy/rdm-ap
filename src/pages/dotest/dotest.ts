@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild, ElementRef} from '@angular/core';
 import { NavController, NavParams, Slides, ViewController, App, AlertController } from 'ionic-angular';
 import { SQLite } from "ionic-native";
 import { Lessondata } from '../../providers/lessondata';
@@ -21,6 +21,7 @@ export class DotestPage {
 	public arr: any = {};
 	public database: SQLite;
 	public tabBarElement: any;
+	public paginationelement: any;
 	public testid: number;
 	
 	@ViewChild(TimerComponent) timer: TimerComponent;
@@ -30,7 +31,7 @@ export class DotestPage {
 
 
 	constructor(public navCtrl: NavController, public params: NavParams, public tutsService: Lessondata, 
-		public viewCtrl: ViewController, public appCtrl: App, private alertCtrl: AlertController
+		public viewCtrl: ViewController, public appCtrl: App, private alertCtrl: AlertController, public element: ElementRef
 		) {
 		this.testid = this.params.get('id');
 		this.tutsService.gettests(this.testid);
@@ -45,14 +46,12 @@ export class DotestPage {
 	ionViewDidLoad() {
 		console.log('Hello DotestPage Page');
 		this.tabBarElement = document.querySelector('.tabbar');
-
 		this.timer.startTimer();
-		
 		
 		this.tabBarElement.style.display = 'none';
 	}
 	ionViewWillLeave(){
-		this.tabBarElement.style.display = 'flex';	
+		this.tabBarElement.style.display = 'flex';
 	}
 	outexam(){
 		let alert = this.alertCtrl.create({
@@ -114,6 +113,17 @@ export class DotestPage {
 	}
 
 	selectanswer(answer, correct){
+		// swiper-pagination
+		var child = this.answerkey + 1;
+		// this.paginationelement = document.querySelector('.swiper-pagination span:nth-child('+child+')');
+		// console.log(this.paginationelement);
+		
+		this.paginationelement = this.element.nativeElement.querySelector('.swiper-pagination span:nth-child('+child+')');
+		// document.querySelector('.swiper-pagination span:nth-child('+child+')')['style'].background = '#fdbe43';
+		this.paginationelement.style = "background: #fdbe43 !important; color: #fff !important;";
+		console.log(this.paginationelement);
+
+
 		var parsed = JSON.parse(correct);
 		
 		if(answer == parsed.correctanswer){
@@ -150,16 +160,18 @@ export class DotestPage {
 		
 	}
 
-	gotoresult(title, variant) {
+	gotoresult(title, variant, year) {
+		this.tabBarElement.style.display = 'flex';
 			this.database = new SQLite();
 	     	this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
 	     	console.log('database is opened');
-				this.database.executeSql("INSERT INTO mytest1 (test_id, test_score, title, variant, userid) VALUES (?, ?, ?, ?, ?)", 
+				this.database.executeSql("INSERT INTO mytest3 (test_id, test_score, title, variant, userid, year) VALUES (?, ?, ?, ?, ?, ?)", 
 		        [
 		            this.testid,
 		            this.arr, 
 		            title,
 		            variant,
+		            year,
 		            1
 
 		        ]).then((data) => {

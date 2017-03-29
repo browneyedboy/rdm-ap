@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Lessondata } from '../../providers/lessondata';
+import { AboutprofPage } from '../aboutprof/aboutprof';
 /*
   Generated class for the Profession page.
 
@@ -19,5 +20,9 @@ export class ProfessionPage {
     console.log('Hello ProfessionPage Page');
     this.tutsService.getprofessionals(1000);
   }
-
+  aboutprof(data){
+      this.navCtrl.push(AboutprofPage, {
+        data: data
+      });
+  }
 }

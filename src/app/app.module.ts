@@ -15,6 +15,8 @@ import { LessonPage } from '../pages/lesson/lesson';
 import { ProfilePage } from '../pages/profile/profile';
 import { RealsearchPage } from '../pages/realsearch/realsearch';
 import { ProfessionPage } from '../pages/profession/profession';
+import { BytypePage } from '../pages/bytype/bytype';
+import { AboutprofPage } from '../pages/aboutprof/aboutprof';
 
 import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
@@ -61,7 +63,9 @@ import { Lessondata } from '../providers/lessondata';
     ResultPage,
     ForgotpassPage,
     AboutuniPage,
-    ProfessionPage
+    ProfessionPage,
+    BytypePage,
+    AboutprofPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -94,7 +98,9 @@ import { Lessondata } from '../providers/lessondata';
     ResultPage,
     ForgotpassPage,
     AboutuniPage,
-    ProfessionPage
+    ProfessionPage,
+    BytypePage,
+    AboutprofPage
   ],
   providers: [ListingService, Lessondata],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

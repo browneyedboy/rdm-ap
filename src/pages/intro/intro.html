@@ -9,7 +9,7 @@
 <ion-content class="intro-content">
   <ion-slides #slider (ionDidChange)="onSlideChanged()" [options]="slide_options">
     
-    <ion-slide class="slide-1" *ngFor="let banner of tutsService.banners">
+    <ion-slide class="slide-1" *ngFor="let banner of tutsService.banners" (click)="gotolink(banner.link)">
            <preload-image [ratio]="{w:1, h:1}" src="http://erdem12.mongoliajourney.com/storage/{{banner.image}}"></preload-image>
     </ion-slide>
     

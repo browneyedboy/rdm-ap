@@ -94,6 +94,23 @@ export class Lessondata {
     }); 
         
   }
+  bytypeid(id){
+    let loading = this.loadingCtrl.create({
+      content: 'Ачаалж байна...'
+    });
+
+    loading.present();
+
+    this.http.get('http://erdem12.mongoliajourney.com/get/testbytype/'+id).map(
+    res => res.json()).subscribe(data => {
+        this.tests = data;
+        loading.dismiss();
+    },
+    err => {
+        console.log("Oops!");
+        loading.dismiss();
+    });
+  }
   gettests(id){
     let loading = this.loadingCtrl.create({
       content: 'Ачаалж байна...'

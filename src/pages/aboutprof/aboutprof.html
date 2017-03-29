@@ -12,9 +12,12 @@
 <ion-content>
 	<ion-list no-lines>
 	    <ion-item>
-            <ion-card *ngFor="let item of tutsService.profs">
-              <button (click)="aboutprof(item)" ion-item><ion-icon name="ios-arrow-forward" item-right></ion-icon>{{ item.title }} <small>{{item.school}}</small></button>
-            </ion-card>
+	    	<h2>Анги: {{ data.title }}</h2>
+	    	<br>
+	    	<h3>Тухай: {{ data.description}}</h3>
+	    	<h3>Сургууль: {{ data.school}}</h3>
+	    	<h3>Босго оноо: {{ data.score}}</h3>
 	    </ion-item>
-   </ion-list>
+	</ion-list>
+
 </ion-content>

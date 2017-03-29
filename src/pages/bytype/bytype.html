@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end>
+	      <button ion-button>
+	        <img src="assets/logo-erdem12.png">
+	      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	
+<ion-list no-lines >
+      <ion-item  *ngFor="let tuts of tutsService.tests">
+          <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <!-- <ion-col class="time" width-20>16<br>минут</ion-col> -->
+                    <ion-col class="title" width-50>{{tuts.title}}</ion-col>
+                    <ion-col class="right" width-50>
+                        <button color="dark" (click)="gotostarttest(tuts)" ion-button clear>Шалгалт өгөх<ion-icon color="primary" name="ios-arrow-down" item-right></ion-icon></button>
+                    </ion-col>
+                  </ion-row>
+                  
+                </ion-grid>
+              </ion-card-content>
+          </ion-card>
+      </ion-item>
+      
+    </ion-list>
+
+</ion-content>

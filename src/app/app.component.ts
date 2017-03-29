@@ -9,7 +9,7 @@ import { MaterialPage } from '../pages/material/material';
 import { ProfessionPage } from '../pages/profession/profession';
 
 
-// import { HomePage } from '../pages/home/home'; // login ordog home
+import { HomePage } from '../pages/home/home'; // login ordog home
 
 import { IntroPage } from '../pages/intro/intro';
 
@@ -29,7 +29,7 @@ export class MyApp {
 
 
 
-  constructor(public platform: Platform, menu: MenuController) {
+  constructor(public platform: Platform, menu: MenuController ) {
     this.rootPage = IntroPage;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -44,7 +44,7 @@ export class MyApp {
             }).then(() => {
 
                 // test offline datas
-                db.executeSql("CREATE TABLE IF NOT EXISTS mytest1 (id INTEGER PRIMARY KEY AUTOINCREMENT, test_id INTEGER, test_score INTEGER, title TEXT, variant TEXT, userid INTEGER)", {}).then((data) => {
+                db.executeSql("CREATE TABLE IF NOT EXISTS mytest3 (id INTEGER PRIMARY KEY AUTOINCREMENT, test_id INTEGER, test_score INTEGER, title TEXT, variant TEXT, userid INTEGER, year TEXT)", {}).then((data) => {
                     console.log("MY test TABLE CREATED: ", data);
                 }, (error) => {
                     console.error("Unable to execute sql", error);
@@ -105,7 +105,10 @@ export class MyApp {
   }
 
   exitApp(){
-       this.platform.exitApp();
+       // this.nav.push(HomePage);
+       // this.viewCtrl.dismiss();
+       this.rootPage = HomePage;
+       this.nav.push(HomePage);
     }
 
 }

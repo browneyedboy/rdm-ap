@@ -12,25 +12,24 @@
 
 </ion-header>
 
-
 <ion-content padding>
-	<form class="auth-form" [formGroup]="edituser" (ngSubmit)="editsave()">
+	<form class="auth-form" (ngSubmit)="editsave()">
 	    <ion-list>
-	      <ion-item>
-	      	{{image}}
-	      </ion-item>
-	      <ion-item>
+	      <!-- <ion-item>
+	      	
+	      </ion-item> -->
+	      <!-- <ion-item>
 	      	<button ion-button clear><ion-icon name="cloud-upload" item-center></ion-icon></button>
-	      </ion-item>
+	      </ion-item> -->
 	      <ion-item class="usrr">
-		    <ion-input type="text" placeholder="Нэр" formControlName="name" value="{{name}}"></ion-input><ion-icon name="contact" item-right></ion-icon>
+		    <ion-input type="text" placeholder="Нэр" name="name" value="{{name}}"></ion-input><ion-icon name="contact" item-right></ion-icon>
 		  </ion-item>
 		  <ion-item class="usrr">
-		    <ion-input type="number" placeholder="УТАС" formControlName="phone" value="{{phone}}"></ion-input><ion-icon name="call" item-right></ion-icon>
+		    <ion-input type="number" placeholder="УТАС" name="phone" value="{{phone}}"></ion-input><ion-icon name="call" item-right></ion-icon>
 		  </ion-item>
 
 		  <ion-item class="usrr">
-		    <ion-input type="email" placeholder="ЦАХИМ ШУУДАН" formControlName="email" value="{{email}}" ></ion-input><ion-icon name="mail" item-right></ion-icon>
+		    <ion-input type="email" placeholder="ЦАХИМ ШУУДАН" name="email" value="{{email}}" ></ion-input><ion-icon name="mail" item-right></ion-icon>
 		  </ion-item>
 
 
