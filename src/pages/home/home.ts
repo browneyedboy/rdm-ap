@@ -26,7 +26,8 @@ export class HomePage {
     console.log('login do');
     this.tutsService.loginuser(this.login.value.email, this.login.value.password);
     console.log(this.tutsService.userloggedin);
-    if(this.tutsService.userloggedin == 1) {
+
+    if(this.tutsService.userloggedin) {
         this.navCtrl.push(TabsPage);
     }else{
       

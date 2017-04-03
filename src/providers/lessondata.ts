@@ -19,8 +19,8 @@ export class Lessondata {
     topic: any = [];
     universities: any = [];
     banners: any =[];
-    userregistered: any= 0;
-    userloggedin: any=0;
+    userregistered: any;
+    userloggedin: any;
     profs: any =[];
     testdata: any = [];
     alltutors: any = [];
@@ -212,6 +212,7 @@ export class Lessondata {
   loginuser(email, password){
     this.http.get('http://erdem12.mongoliajourney.com/post/login/'+email+'/'+password).map(
     res => res.json()).subscribe(data => {
+        console.log(data);
         this.userloggedin = data;
     },
     err => {

@@ -14,10 +14,13 @@ import { Lessondata } from '../../providers/lessondata';
 })
 export class ResultPage {
 	onoo: any;
+  public tabBarElement: any;
   constructor(public navCtrl: NavController, public params: NavParams, public tutsService: Lessondata) {}
 
   ionViewDidLoad() {
     console.log('Hello ResultPagePage Page');
+    this.tabBarElement = document.querySelector('.tabbar');
+    this.tabBarElement.style.display = 'flex';
     
     var sum = 0;
     var data = this.params.get('data');

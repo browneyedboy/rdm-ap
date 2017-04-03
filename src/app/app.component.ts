@@ -10,6 +10,7 @@ import { ProfessionPage } from '../pages/profession/profession';
 
 
 import { HomePage } from '../pages/home/home'; // login ordog home
+import { PaymentPage } from '../pages/payment/payment';
 
 import { IntroPage } from '../pages/intro/intro';
 
@@ -102,6 +103,9 @@ export class MyApp {
   }
   openprof(){
     this.nav.push(ProfessionPage);
+  }
+  openpay(){
+    this.nav.push(PaymentPage);
   }
 
   exitApp(){

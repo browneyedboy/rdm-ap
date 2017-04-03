@@ -28,6 +28,7 @@ import { EditprofilePage } from '../pages/editprofile/editprofile';
 import { ResultPage } from '../pages/result-page/result-page';
 import {ForgotpassPage} from '../pages/forgotpass/forgotpass';
 import {AboutuniPage} from '../pages/aboutuni/aboutuni';
+import {PaymentPage} from '../pages/payment/payment';
 
 
 
@@ -65,7 +66,8 @@ import { Lessondata } from '../providers/lessondata';
     AboutuniPage,
     ProfessionPage,
     BytypePage,
-    AboutprofPage
+    AboutprofPage,
+    PaymentPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -100,7 +102,8 @@ import { Lessondata } from '../providers/lessondata';
     AboutuniPage,
     ProfessionPage,
     BytypePage,
-    AboutprofPage
+    AboutprofPage,
+    PaymentPage
   ],
   providers: [ListingService, Lessondata],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

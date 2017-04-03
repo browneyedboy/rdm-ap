@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { SQLite } from "ionic-native";
 import { EditprofilePage } from '../editprofile/editprofile';
+import { Lessondata } from '../../providers/lessondata';
 
 @Component({
   selector: 'page-profile',
@@ -18,7 +19,7 @@ export class ProfilePage {
   public image: any;
   // password: any;
 
-  constructor(public navCtrl: NavController, private platform: Platform) {
+  constructor(public navCtrl: NavController, private platform: Platform, public tutsService: Lessondata) {
     this.platform.ready().then(() => {
         this.database = new SQLite();
         this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
@@ -47,6 +48,9 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log('Hello ProfilePage Page');
+    console.log(this.tutsService.userloggedin);
+    console.log('activated?');
+    console.log(this.tutsService.userloggedin.activate);
   }
 
   edit(id){

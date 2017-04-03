@@ -61,7 +61,7 @@
                             </ion-row>
                             <ion-row>
                                 <ion-col  *ngFor="let test of year.test" width-25>
-                                    <button  ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
+                                    <button [disabled]="activated" ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
@@ -104,7 +104,7 @@
                             </ion-row>
                             <ion-row>
                                 <ion-col  *ngFor="let test of year.test" width-25>
-                                    <button  ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
+                                    <button [disabled]="activated" ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
