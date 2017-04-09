@@ -20,30 +20,31 @@ export class ProfilePage {
   // password: any;
 
   constructor(public navCtrl: NavController, private platform: Platform, public tutsService: Lessondata) {
-    this.platform.ready().then(() => {
-        this.database = new SQLite();
-        this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
-          console.log('database is opened');
-          this.database.executeSql("SELECT * FROM userprofile LIMIT 1", []).then((data) => {
-              if(data.rows.length > 0) {
-                  for(var i = 0; i < data.rows.length; i++) {
-                      this.userid = data.rows.item(i).id;
-                      this.name = data.rows.item(i).name;
-                      this.phone = data.rows.item(i).phone;
-                      this.email = data.rows.item(i).email;
-                      this.image = data.rows.item(i).image;
-                      // this.password = data.rows.item(i).password;
-                  }
-              }
+    // this.platform.ready().then(() => {
+    //     this.database = new SQLite();
+    //     this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
+    //       console.log('database is opened');
+    //       this.database.executeSql("SELECT * FROM userprofile LIMIT 1", []).then((data) => {
+    //           if(data.rows.length > 0) {
+    //               for(var i = 0; i < data.rows.length; i++) {
+    //                   this.userid = data.rows.item(i).id;
+    //                   this.name = data.rows.item(i).name;
+    //                   this.phone = data.rows.item(i).phone;
+    //                   this.email = data.rows.item(i).email;
+    //                   this.image = data.rows.item(i).image;
+    //                   // this.password = data.rows.item(i).password;
+    //               }
+    //           }
               
-          }, (error) => {
-              console.log("ERROR: " + error);
-          });
+    //       }, (error) => {
+    //           console.log("ERROR: " + error);
+    //       });
 
-        }, (error) => {
-            console.log("ERROR: ", error);
-        });
-    });
+    //     }, (error) => {
+    //         console.log("ERROR: ", error);
+    //     });
+    // });
+    
   }
 
   ionViewDidLoad() {
@@ -51,6 +52,11 @@ export class ProfilePage {
     console.log(this.tutsService.userloggedin);
     console.log('activated?');
     console.log(this.tutsService.userloggedin.activate);
+    this.userid = this.tutsService.userloggedin.id;
+    this.name = this.tutsService.userloggedin.firstname;
+    this.phone = this.tutsService.userloggedin.phone;
+    this.email = this.tutsService.userloggedin.email;
+    // this.image = data.rows.item(i).image;
   }
 
   edit(id){

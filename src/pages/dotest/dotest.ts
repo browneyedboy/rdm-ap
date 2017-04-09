@@ -161,6 +161,11 @@ export class DotestPage {
 	}
 
 	gotoresult(title, variant, year) {
+		var sum = 0;
+		var data = this.arr;
+		for (var i in data) {
+	    	sum += parseFloat(data[i])
+	    }
 		this.tabBarElement.style.display = 'flex';
 			this.database = new SQLite();
 	     	this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
@@ -168,7 +173,7 @@ export class DotestPage {
 				this.database.executeSql("INSERT INTO mytest3 (test_id, test_score, title, variant, userid, year) VALUES (?, ?, ?, ?, ?, ?)", 
 		        [
 		            this.testid,
-		            this.arr, 
+		            sum, 
 		            title,
 		            variant,
 		            year,

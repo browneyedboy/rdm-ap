@@ -41,7 +41,7 @@
 
 <ion-card *ngFor="let item of items">
   <ion-grid>
-    <ion-row>
+    <ion-row ion-botton (click)="goono(item.score)">
       <ion-col  width-33>{{item.title}}({{item.year}})</ion-col>
       <ion-col  width-33>Вариант {{item.variant}}</ion-col>
       <ion-col  width-33>

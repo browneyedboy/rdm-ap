@@ -17,6 +17,7 @@ import { RealsearchPage } from '../pages/realsearch/realsearch';
 import { ProfessionPage } from '../pages/profession/profession';
 import { BytypePage } from '../pages/bytype/bytype';
 import { AboutprofPage } from '../pages/aboutprof/aboutprof';
+import { ProfbyonoPage } from '../pages/profbyono/profbyono';
 
 import { TopicPage } from '../pages/topic/topic';
 import { DotestPage } from '../pages/dotest/dotest';
@@ -67,7 +68,8 @@ import { Lessondata } from '../providers/lessondata';
     ProfessionPage,
     BytypePage,
     AboutprofPage,
-    PaymentPage
+    PaymentPage,
+    ProfbyonoPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -103,7 +105,8 @@ import { Lessondata } from '../providers/lessondata';
     ProfessionPage,
     BytypePage,
     AboutprofPage,
-    PaymentPage
+    PaymentPage,
+    ProfbyonoPage
   ],
   providers: [ListingService, Lessondata],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

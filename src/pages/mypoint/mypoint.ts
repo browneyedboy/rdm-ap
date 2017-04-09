@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { SQLite } from "ionic-native";
-/*
-  Generated class for the Mypoint page.
+import { ProfbyonoPage } from "../profbyono/profbyono";
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-mypoint',
   templateUrl: 'mypoint.html'
@@ -31,6 +27,7 @@ export class MypointPage {
 			      	if(data.rows.length > 0) {
 		                for(var i = 0; i < data.rows.length; i++) {
 		                    this.items.push({title: data.rows.item(i).title, score: data.rows.item(i).test_score, variant: data.rows.item(i).variant, year: data.rows.item(i).year});
+		                    console.log(data.rows.item(i));
 		                }
 		          	}
 
@@ -42,6 +39,11 @@ export class MypointPage {
         });
 
 	});
+  }
+  goono(onoo){
+  	this.navCtrl.push(ProfbyonoPage, {
+  		onoo: onoo
+  	});
   }
 
 }

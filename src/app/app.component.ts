@@ -45,7 +45,7 @@ export class MyApp {
             }).then(() => {
 
                 // test offline datas
-                db.executeSql("CREATE TABLE IF NOT EXISTS mytest3 (id INTEGER PRIMARY KEY AUTOINCREMENT, test_id INTEGER, test_score INTEGER, title TEXT, variant TEXT, userid INTEGER, year TEXT)", {}).then((data) => {
+                db.executeSql("CREATE TABLE IF NOT EXISTS mytest3 (id INTEGER PRIMARY KEY AUTOINCREMENT, test_id INTEGER, test_score TEXT, title TEXT, variant TEXT, userid INTEGER, year TEXT)", {}).then((data) => {
                     console.log("MY test TABLE CREATED: ", data);
                 }, (error) => {
                     console.error("Unable to execute sql", error);

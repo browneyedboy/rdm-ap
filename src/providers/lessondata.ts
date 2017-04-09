@@ -27,6 +27,7 @@ export class Lessondata {
     
   constructor(public http: Http, public loadingCtrl: LoadingController) {
     console.log('Hello Lessondata Provider');
+    // this.userloggedin = null;
   }
 
   load(){
@@ -201,23 +202,40 @@ export class Lessondata {
   }
   registeruser(phone, email){
     // this.http.get('http://erdem12.mongoliajourney.com/post/register/'+phone+'/'+email+'/'appkeycode)
-    this.http.get('http://erdem12.mongoliajourney.com/post/register/'+phone+'/'+email).map(
-    res => res.json()).subscribe(data => {
-        this.userregistered = data;
-    },
-    err => {
-        this.userregistered = 0;
-    });
+    
+    return new Promise((resolve) => {
+
+      this.http.get('http://erdem12.mongoliajourney.com/post/register/'+phone+'/'+email)
+
+      .map(res => res.json())
+
+      .subscribe(data => {
+
+      this.userloggedin = data;
+      resolve(data);
+
+      });
+
+    }); 
+
   }
   loginuser(email, password){
-    this.http.get('http://erdem12.mongoliajourney.com/post/login/'+email+'/'+password).map(
-    res => res.json()).subscribe(data => {
-        console.log(data);
-        this.userloggedin = data;
-    },
-    err => {
-        this.userloggedin = 0;
-    });   
+    
+    
+    return new Promise((resolve) => {
+
+      this.http.get('http://erdem12.mongoliajourney.com/post/login/'+email+'/'+password)
+
+      .map(res => res.json())
+
+      .subscribe(data => {
+
+      this.userloggedin = data;
+      resolve(data);
+
+      });
+
+    }); 
   }
   getprofessionals(sum){
     let loading = this.loadingCtrl.create({

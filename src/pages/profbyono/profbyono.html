@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-right>
+      <img src="assets/logo-erdem12.png" class="logo">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item-group>
+    <ion-item>Оноо: {{ onoo }}</ion-item>
+    <ion-item-divider color="light" text-center><strong>Элсэх боломжой ангиуд </strong></ion-item-divider>
+    <ion-item class="nomarg" *ngFor="let item of tutsService.profs" >
+		<ion-card class="card-md">
+		  <ion-card-content padding>
+		    {{ item.title }} 
+			<small>{{item.school}}</small>
+		  </ion-card-content>
+		</ion-card>
+    </ion-item>
+  </ion-item-group>
+</ion-content>
