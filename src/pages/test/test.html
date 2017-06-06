@@ -47,10 +47,8 @@
                   </ion-row>
                   <div *ngIf="show==tuts.id">
                   <ion-row>
-                    <ion-col *ngFor="let year of tuts.years" width-50>
-                            
-                        <ion-grid  >
-                    
+                    <ion-col *ngFor="let year of tuts.years; let i = index " width-50>
+                        <ion-grid>
                             <ion-row>
                                 <ion-col width-33>
                                     <span class="year-back">{{ year.year }}</span>
@@ -60,8 +58,11 @@
                                 </ion-col>
                             </ion-row>
                             <ion-row>
-                                <ion-col  *ngFor="let test of year.test" width-25>
-                                    <button [disabled]="activated" ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
+                                <ion-col  *ngFor = "let test of year.test; let j = index " width-25>
+                                    
+                                    <button *ngIf ="i == 0 && 0 == j" ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
+
+                                    <button *ngIf =" i > 0 && j > 0 " [disabled]="activated" ion-button (click)="gotostarttest(test)" color="dark" outline round>{{test.variant}}</button>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
